@@ -82,18 +82,16 @@ const ResumePage = () => {
                             <div className="md:w-3/4 w-full">
                                 <p className="h-9 pt-4 font-thin">연 매출 1700억의 중견 IT기업</p>
                                 <ul className="mt-4 ml-5 list-square list-outside divide-y-4 divide-transparent">
+                                    <li>PHP / CodeIgniter / MySQL 환경에서의 개발 경험</li>
+                                    <li>JAVA 환경에서의 RFC 5730(EPP)표준에 따른 개발 경험</li>
                                     <li>
-                                        PHP / CodeIgniter / MySQL 환경에서의 개발 경험
-                                    </li>
-                                    <li>
-                                        JAVA 환경에서의 RFC 5730(EPP)표준에 따른 개발 경험
-                                    </li>
-                                    <li>
-                                        2021년 8월 부터 2022년 3월까지 시스템 혼자서 개발 / 배포 / 운영 담당
+                                        2021년 8월 부터 2022년 3월까지 시스템 혼자서 개발 / 배포 /
+                                        운영 담당
                                     </li>
                                     <li>3만 건의 도메인 및 14만 건의 DNS 관리 경험</li>
                                     <li>
-                                        정산 시스템 페이지 로딩 시간 평균 1.51초에서 0.36초로 성능 개선
+                                        정산 시스템 페이지 로딩 시간 평균 1.51초에서 0.36초로 성능
+                                        개선
                                     </li>
                                 </ul>
                             </div>
@@ -111,7 +109,9 @@ const ResumePage = () => {
                             </div>
                             <div className="md:w-3/4 w-full">
                                 <p className="h-9 pt-4 font-thin">
-                                    <a href="https://github.com/zodaland/blog" target="_blank">https://github.com/zodaland/blog</a>
+                                    <a href="https://github.com/zodaland/blog" target="_blank">
+                                        https://github.com/zodaland/blog
+                                    </a>
                                 </p>
                                 <ul className="mt-4 ml-5 list-square list-outside divide-y-4 divide-transparent">
                                     <li>개인 블로그 개발 및 운영</li>
@@ -132,11 +132,16 @@ const ResumePage = () => {
                             </div>
                             <div className="md:w-3/4 w-full">
                                 <p className="h-9 pt-4 font-thin">
-                                    <a href="https://github.com/zodaland/4senc" target="_blank">https://github.com/zodaland/4senc</a>
+                                    <a href="https://github.com/zodaland/4senc" target="_blank">
+                                        https://github.com/zodaland/4senc
+                                    </a>
                                 </p>
                                 <ul className="mt-4 ml-5 list-square list-outside divide-y-4 divide-transparent">
                                     <li>GraphQL 기반의 사이드 프로젝트</li>
-                                    <li>TypeScript 기반의 백엔드 / JavaScript 기반의 프론트엔드 개발 전담</li>
+                                    <li>
+                                        TypeScript 기반의 백엔드 / JavaScript 기반의 프론트엔드 개발
+                                        전담
+                                    </li>
                                     <li>기술 스택</li>
                                     <li className="ml-5">
                                         TypeScript, Express.js, GraphQL, MySQL, winston, JavaScript,
@@ -153,7 +158,9 @@ const ResumePage = () => {
                             </div>
                             <div className="md:w-3/4 w-full">
                                 <p className="h-9 pt-4 font-thin">
-                                    <a href="https://github.com/zodaland/molltalk" target="_blank">https://github.com/zodaland/molltalk</a>
+                                    <a href="https://github.com/zodaland/molltalk" target="_blank">
+                                        https://github.com/zodaland/molltalk
+                                    </a>
                                 </p>
                                 <ul className="mt-4 ml-5 list-square list-outside divide-y-4 divide-transparent">
                                     <li>웹 채팅 구현 사이드 프로젝트</li>
@@ -257,30 +264,21 @@ const ResumePage = () => {
                                     Name server 구축 및 운영, was / 네트워크 설정 등 인프라 관리
                                 </li>
                                 <li>
-                                    iptables 관리 및 GeoIP 설정, Nmap 사용, 서버 OTP 적용 등
-                                    보안 관리
+                                    iptables 관리 및 GeoIP 설정, Nmap 사용, 서버 OTP 적용 등 보안
+                                    관리
                                 </li>
                                 <li>
-                                    비효율 적인 프로세스 개선 및 Shell script를
-                                    통한 관리 자동화
+                                    비효율 적인 프로세스 개선 및 Shell script를 통한 관리 자동화
                                 </li>
-                                <li>
-                                    로그관리 및 모니터링
-                                </li>
+                                <li>로그관리 및 모니터링</li>
                             </ul>
                         </div>
                         <div className="mb-12 pt-12">
                             <p className="text-3xl font-bold">Docker Environments</p>
                             <ul className="mt-4 md:ml-5 ml-7 list-square list-outside divide-y-4 divide-transparent text-lg font-thin">
-                                <li>
-                                    Docker 환경 구성 및 개발
-                                </li>
-                                <li>
-                                    Docker compose 설정을 통한 다중 컨테이너 앱 관리
-                                </li>
-                                <li>
-                                    컨테이너간 통신 및 다수 컨테이너의 통신 환경 구성
-                                </li>
+                                <li>Docker 환경 구성 및 개발</li>
+                                <li>Docker compose 설정을 통한 다중 컨테이너 앱 관리</li>
+                                <li>컨테이너간 통신 및 다수 컨테이너의 통신 환경 구성</li>
                             </ul>
                         </div>
                         <div className="mb-12 pt-12">
