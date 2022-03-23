@@ -15,7 +15,7 @@ export class BoardTag {
     board: Board;
 
     //cascade : tag is created if boardTag has created
-    @ManyToOne(type => Tag, { cascade: true })
+    @ManyToOne(type => Tag, { eager: true, cascade: true })
     @JoinColumn({ name: 'tag_id', referencedColumnName: 'id'})
     tag: Tag;
 }
