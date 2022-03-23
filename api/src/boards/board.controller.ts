@@ -35,6 +35,14 @@ export class BoardController {
             throw new InternalServerErrorException();
         }
     }
+    @Get('search')
+    async getBoardForKeyword(@Query('keyword') keyword: string): Promise<Board[]> {
+        try {
+            return await this.boardService.getBoardForKeyword(keyword);
+        } catch (e) {
+            throw new InternalServerErrorException();
+        }
+    }
     @Get(':category/count')
     async getCategoryCount(@Param('category') category: string): Promise<ICount> {
         try {

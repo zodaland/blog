@@ -11,6 +11,7 @@ import { parse } from 'node-html-parser';
 import { InputBoard } from './dto';
 import { Connection } from 'typeorm';
 import { LogService } from '../log/log.service';
+import { ConfigService } from '../config/config.service';
 import { MailService } from '../mail/mail.service';
 
 import fetch from "node-fetch";
@@ -21,6 +22,7 @@ export class BoardService {
         @InjectRepository(Board) private boardRepository: Repository<Board>,
         @InjectRepository(Tag) private tagRepository: Repository<Tag>,
         @InjectRepository(BoardTag) private boardTagRepository: Repository<BoardTag>,
+        private readonly configService: ConfigService,
         private readonly logService: LogService,
         private readonly mailService: MailService,
         private connection: Connection,
@@ -313,7 +315,7 @@ export class BoardService {
             formData.append('file', file.buffer);
             console.log(file.originalname);
             formData.append('name', file.originalname);
-            const res = await fetch('https://image.zodaland.com/upload/blog', {
+            const res = await fetch(this.configService.get('IMAGE_SERVER_URL'), {
                 method: "POST",
                 body: formData,
             });
@@ -325,6 +327,36 @@ export class BoardService {
             this.logService.error(e.toString());
             this.mailService.send({
                 subject: 'boardService - tempUploadBoardImage 에러 발생',
+                content: 'board 로그 확인 요망',
+            });
+        }
+    }
+    async getBoardForKeyword(keyword: string): Promise<Board[]> {
+        try {
+            const rows = await this.boardRepository.find();
+            const matchedRows = rows.filter((row: Board) => {
+                let result = false;
+                const innerText = parse(row.content).innerText;
+                const filteredContent = innerText.replace(/<[^>]+>|\&lt;|\&gt;/gi, '');
+                const filteredContentExist = filteredContent.toLowerCase().includes(keyword);
+                const filteredTitleExist = row.title.toLowerCase().includes(keyword);
+                const filteredTagExist = row.boardTags.some((boardTag: BoardTag) => boardTag.tag.name.toLowerCase().includes(keyword));
+
+                if (filteredContentExist || filteredTitleExist || filteredTagExist) {
+                    if (filteredContentExist) console.log(filteredContent);
+                    if (filteredTitleExist) console.log(row.title);
+                    if (filteredTagExist) console.log(row.boardTags);
+                    result = true;
+                }
+
+                return result;
+            });
+            const resultRows = this.convertBoardToSummaryBoards(matchedRows)
+            return resultRows;
+        } catch (e) {
+            this.logService.error(e.toString());
+            this.mailService.send({
+                subject: 'boardService - getBoardForKeyword 에러 발생',
                 content: 'board 로그 확인 요망',
             });
         }

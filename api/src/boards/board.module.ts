@@ -7,11 +7,13 @@ import { Board } from './board.entity';
 import { BoardTag } from './board_tag.entity';
 import { Tag } from '../tags/tag.entity';
 import { LogModule } from '../log/log.module';
+import { ConfigModule } from '../config/config.module';
 import { MailModule } from '../mail/mail.module';
 
 @Module({
     imports: [
         TypeOrmModule.forFeature([Board, Tag, BoardTag]),
+        ConfigModule.register({folder: './config' }),
         LogModule.register({ file: 'board' }),
         MailModule,
     ],
