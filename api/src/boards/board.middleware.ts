@@ -19,7 +19,7 @@ export class BoardMiddleware implements NestMiddleware {
         }
         const queryKeys: string[] = Object.keys(req.query);
         if (queryKeys.length > 0) {
-            const stringRegEx = /^[a-zA-Z0-9가-힣 ]+$/;
+            const stringRegEx = /^[a-zA-Z0-9가-힣. ]+$/;
             const arrayRegEx = /^\[("[a-zA-Z0-9가-힣. ]+")(,"[a-zA-Z0-9가-힣. ]+")*?\]$/;
             const isValidQuery = queryKeys.every(queryKey => stringRegEx.test(req.query[queryKey].toString()) || arrayRegEx.test(req.query[queryKey].toString()));
             if (!isValidQuery) throw new BadRequestException();
