@@ -28,7 +28,7 @@ export const getServerSideProps: GetServerSideProps = withGetServerSideProps(
         if (!context.params) return { notFound: true };
         const { code } = context.params;
 
-        const res = await fetch(`https://otp.zodaland.com/check/${code}`);
+        const res = await fetch(`${process.env.OTP_URL}/${code}`);
         if (res.status !== 200) return { notFound: true };
 
         return {
