@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        font-family: inherit;
+    }
+    footer {
+        @apply mb-8;
+    }
+	h1 {
+		@apply text-2xl;
+	}
+    .main {
+        min-width: 768px;
+		max-width: 768px;
+    }
+	.sub {
+        min-width: calc((100% - 768px) / 2);
+		max-width: calc((100% - 768px) / 2);
+	}
+    .resume {
+        	letter-spacing: -0.05em;
+    }
+	.w-pic {
+		width: 1024px;
+	}
+	.h-pic {
+		height: 400px;;
+	}
+    .list-square {
+        list-style-type: square;
+    }
+    .list-square li::marker {
+      color: rgb(125 211 252);
+      font-weight: 700;
+    }
+    @media all and (max-width: 767px) {
+        .main {
+            min-width: 100%;
+			max-width: 100%;
+        }
+		.w-pic {
+			width: 100%;
+		}
+		.h-pic {
+			height: 46vw;
+		}
+		.menu {
+			background: rgba(240,249,255,0.85);
+		}
+		.menu::after {
+			 border-top: 0px solid transparent; 
+			 border-left: 10px solid transparent; 
+			 border-right: 10px solid transparent; 
+			 border-bottom: 10px solid rgba(240,249,255,0.85); 
+			 content: ""; 
+			 position: absolute;
+			 top: -10px;
+			 right: 10px;
+		}
+    }
+	@media all and (max-width: 1279px) {
+		.search-modal {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100vw;
+			height: 100vh;
+			z-index: 10;
+			padding-top: 12vh !important;
+			padding: 0 33%;
+		}
+	}
+	@media all and (max-width: 1023px) {
+		.search-modal {
+			padding: 0 25%;
+		}
+	}
+	.content h1 {
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+		font-weight: 700;
+	}
+	.content ul {
+		list-style-type: square;
+		margin-left: 1.25rem;
+	}
+	.content ol {
+		list-style-type: decimal;
+		margin-left: 1.25rem;
+	}
+	.content blockquote {
+		margin: 14px 0;
+		border-left: 4px solid #e5e5e5;
+		padding: 0 16px;
+		color: #999;
+	}
+	.content a {
+		text-decoration-line: underline;
+		text-decoration-color: #0ea5e9;
+		text-underline-offset: 1px;
+	}
+	.content p {
+		word-break: break-all;
+	}
+    .content hr {
+      margin: 1rem 5rem;
+    }
+    .content p code {
+      background-color: rgb(224 242 254);
+      padding: .1rem .3rem;
+      font-size: .9rem;
+      color: rgb(12 74 110);
+      border-radius: .2rem
+    }
+    .content li {
+      margin: .7rem 0;
+    }
+    .content li::marker {
+      color: rgb(2 132 199);
+      font-weight: 700;
+    }
+    input::-webkit-calendar-picker-indicator {
+        opacity: 0;
+    }
+}
