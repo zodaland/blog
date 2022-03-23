@@ -13,7 +13,7 @@ const Detail = ({ board }: ServerSideBoardProps) => {
     return (
         <>
             {board.file && <MainImageComponent file={board.file} />}
-            <div className="flex flex-wrap items-start justify-center w-full">
+            <div className="flex flex-wrap items-start justify-center w-full mt-10">
                 <Tags />
                 <section className="main space-y-4">
                     <h1 className="font-bold md:text-3xl text-2xl tracking-tight mb-2">
