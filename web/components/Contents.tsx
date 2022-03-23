@@ -33,7 +33,9 @@ const Contents = ({ className }: ClassProps) => {
         const handleScroll = () => {
             if (contents.length < 1) return;
             const targetFocus = contents.findIndex((data: string, idx: number) => {
-                const offsetTop = document.querySelectorAll('h1')[idx].offsetTop;
+                const h1Elements = document.querySelectorAll('h1');
+                if (h1Elements.length < 1) return false;
+                const offsetTop = h1Elements[idx].offsetTop;
                 return offsetTop >= scrollY;
             });
             dispatch(setFocus(targetFocus));
