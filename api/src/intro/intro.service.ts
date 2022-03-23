@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '../config/config.service';
 import { LogService } from '../log/log.service';
+import { MailService } from '../mail/mail.service';
 import { Intro } from './dto';
 import * as yaml from 'yaml';
 import { readFile, writeFile } from 'fs';
@@ -13,6 +14,7 @@ export class IntroService {
     constructor(
         private readonly configService: ConfigService,
         private readonly logService: LogService,
+        private readonly mailService: MailService,
     ) {
         this.path = this.configService.get('YAML');
         this.defaultIntro = new Intro();
@@ -25,6 +27,10 @@ export class IntroService {
             readFile(this.path, 'utf-8', (err, rawIntro) => {
                 if (err) {
                     this.logService.error(JSON.stringify(err));
+                    this.mailService.send({
+                        subject: 'introService - getIntro 에러 발생',
+                        content: 'yaml 로그 확인 요망',
+                    });
                     resolve(this.defaultIntro);
                 } else {
                     const intro: Intro|null = yaml.parse(rawIntro);
@@ -44,6 +50,10 @@ export class IntroService {
             writeFile(this.path, rawIntro, 'utf-8', (err) => {
                 if (err) {
                     this.logService.error(JSON.stringify(err));
+                    this.mailService.send({
+                        subject: 'IntroService - getIntro 에러 발생',
+                        content: 'yaml 로그 확인 요망',
+                    });
                     reject(false);
                 }
                 resolve(true);
