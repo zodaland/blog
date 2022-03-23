@@ -1,4 +1,4 @@
-import { ReactNode, ChangeEvent } from 'react';
+import { ReactNode } from 'react';
 
 import { IBoard, ITag } from './board';
 import { IIntro } from './intro';
@@ -87,4 +87,8 @@ export interface ChaserProps extends ChildrenProps {
 
 export interface ChildrenProps {
     children: ReactNode;
+}
+
+export interface SearchProps {
+    text: string;
 }
