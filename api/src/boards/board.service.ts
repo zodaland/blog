@@ -97,7 +97,7 @@ export class BoardService {
         let rawRows: Board[];
 
         try {
-            const qb = this.boardRepository.createQueryBuilder('board')
+            let qb = this.boardRepository.createQueryBuilder('board')
                 .leftJoinAndSelect('board.boardTags', 'boardTag')
                 .leftJoinAndSelect('boardTag.tag', 'tag')
                 .where('board.category = :category', { category })
@@ -105,6 +105,18 @@ export class BoardService {
                 .orderBy('board.date', 'DESC')
                 .skip(skip)
                 .take(offset);
+
+            if (tags) {
+                const boardTagRows = await this.boardTagRepository.createQueryBuilder('boardTag')
+                    .select('boardTag.board_id as id')
+                    .leftJoin('boardTag.tag', 'tag')
+                    .where('tag.name IN (:tags)', { tags })
+                    .getRawMany();
+                const boardIds = boardTagRows.map((row: BoardTag) => row.id);
+
+                qb.andWhere('board.id IN (:boardIds)', { boardIds});
+            }
+
             rawRows = await qb.getMany();
         } catch (e) {
             this.logService.error(e.toString());
@@ -121,7 +133,6 @@ export class BoardService {
                 return isIncludeAllTag;
             });
         }
-        
         const rows: Board[] = this.convertBoardToSummaryBoards(rawRows);
         return rows;
     }
@@ -219,7 +230,6 @@ export class BoardService {
                     const res = await fetch(`https://image.zodaland.com/delete/${imageName}`, {
                         method: "DELETE",
                     });
-                    console.log(res);
                     if (res.status !== 200) throw new Error('image res status is not 200');
                     const isSuccess = await res.text();
                     if (!isSuccess) throw new Error('image res is 200 but image delete not success');
@@ -277,13 +287,25 @@ export class BoardService {
             });
         }
     }
-    async getCategoryCount(category: string): Promise<number> {
+    async getCategoryCount(category: string, tags: string[]): Promise<number> {
         try {
-            const { count } = await this.boardRepository.createQueryBuilder()
+            const qb = this.boardRepository.createQueryBuilder()
                     .select('COUNT(id) as count')
                     .where('category = :category', { category })
                     .andWhere('private = false')
-                    .getRawOne();
+
+            if (tags) {
+                const boardTagRows = await this.boardTagRepository.createQueryBuilder('boardTag')
+                    .select('boardTag.board_id as id')
+                    .leftJoin('boardTag.tag', 'tag')
+                    .where('tag.name IN (:tags)', { tags })
+                    .getRawMany();
+                const boardIds = boardTagRows.map((row: BoardTag) => row.id);
+
+                qb.andWhere('id IN (:boardIds)', { boardIds});
+            }
+            const { count } = await qb.getRawOne();
+console.log
             return count;
         } catch (e) {
             this.logService.error(e.toString());
@@ -313,13 +335,11 @@ export class BoardService {
             const FormData = require('form-data');
             const formData = new FormData();
             formData.append('file', file.buffer);
-            console.log(file.originalname);
             formData.append('name', file.originalname);
             const res = await fetch(this.configService.get('IMAGE_SERVER_URL'), {
                 method: "POST",
                 body: formData,
             });
-            console.log(res);
             if (res.status !== 200) throw new Error('image res status is not 200');
             const fileName = await res.text();
             return fileName;
@@ -343,9 +363,6 @@ export class BoardService {
                 const filteredTagExist = row.boardTags.some((boardTag: BoardTag) => boardTag.tag.name.toLowerCase().includes(keyword));
 
                 if (filteredContentExist || filteredTitleExist || filteredTagExist) {
-                    if (filteredContentExist) console.log(filteredContent);
-                    if (filteredTitleExist) console.log(row.title);
-                    if (filteredTagExist) console.log(row.boardTags);
                     result = true;
                 }
 

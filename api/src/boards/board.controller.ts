@@ -44,9 +44,10 @@ export class BoardController {
         }
     }
     @Get(':category/count')
-    async getCategoryCount(@Param('category') category: string): Promise<ICount> {
+    async getCategoryCount(@Param('category') category: string,  @Query('tags') tags: string|undefined): Promise<ICount> {
         try {
-            const count: number = await this.boardService.getCategoryCount(category);
+            const parsedTags: string[]|null = tags ? JSON.parse(tags) : null;
+            const count: number = await this.boardService.getCategoryCount(category, parsedTags);
             return { count };
         } catch {
             throw new InternalServerErrorException();
