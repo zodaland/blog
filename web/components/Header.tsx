@@ -154,7 +154,7 @@ const SearchComponent = ({ text }: SearchProps) => {
 
     return (
         <div className="search-modal flex place-content-center backdrop-blur-sm md:px-0 px-5">
-            <div className="main h-full bg-white rounded-xl p-5 overflow-y-auto">
+            <div className="main h-full bg-white rounded-xl p-5 overflow-y-auto divide-y">
                 {(() => {
                     if (error || !data) {
                         return <Loading />;
