@@ -4,7 +4,7 @@ import { IUri, IUriWithTags } from '../../interfaces';
 const initialState: IUriWithTags = {
     category: '',
     id: '',
-    tags: null
+    tags: []
 };
 
 export const uriSlice: any = createSlice({
@@ -15,7 +15,7 @@ export const uriSlice: any = createSlice({
             state.category = action.payload.category;
             state.id = action.payload.id;
         },
-        setTags: (state, action: PayloadAction<string[]|null>) => {
+        setTags: (state, action: PayloadAction<string[]>) => {
             state.tags = action.payload;
         }
     }

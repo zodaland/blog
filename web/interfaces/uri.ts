@@ -4,5 +4,5 @@ export interface IUri {
 }
 
 export interface IUriWithTags extends IUri {
-    tags: string[]|null;
+    tags: string[];
 }
