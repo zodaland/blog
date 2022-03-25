@@ -55,7 +55,11 @@ const CategoryIndex = ({ page, offset }: PagingProps) => {
         if (!category) return;
         const initiatePage = async () => {
             try {
-                const { count } = await fetcher(`/board/${category}/count`);
+                const { count } = await fetcher(
+                    `/board/${category}/count${
+                        tags.length > 0 ? '?tags=' + encodeURI(JSON.stringify(tags)) : ''
+                    }`,
+                );
                 setPageOption({
                     ...pageOption,
                     total: Math.ceil(count / offset),
@@ -63,10 +67,10 @@ const CategoryIndex = ({ page, offset }: PagingProps) => {
             } catch (error) {}
         };
         initiatePage();
-    }, [category]);
+    }, [category, tags]);
 
     useEffect(() => {
-        handlePage(pageOption.page);
+        handlePage(1);
     }, [pageOption.total]);
 
     //swr
@@ -74,7 +78,9 @@ const CategoryIndex = ({ page, offset }: PagingProps) => {
     const url = `/board/${category}/page/${pageOption.page ?? page}/offset/${offset}`;
     const fallbackData = !tags && pageOption.page === page ? fallback : undefined;
     const { data } = useSWR(
-        category ? `${url}${tags ? '?tags=' + encodeURI(JSON.stringify(tags)) : ''}` : null,
+        category
+            ? `${url}${tags.length > 0 ? '?tags=' + encodeURI(JSON.stringify(tags)) : ''}`
+            : null,
         fetcher,
         { fallbackData },
     );
