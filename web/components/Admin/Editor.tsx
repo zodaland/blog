@@ -142,7 +142,7 @@ const uploadImage = async (file: File, token: string): Promise<string | null> =>
     const formData = new FormData();
     formData.append('file', file);
     try {
-        const res = await fetch('https://blogapi.test.zodaland.com/board/image', {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/board/image`, {
             mode: 'cors',
             credentials: 'same-origin',
             method: 'POST',

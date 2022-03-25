@@ -127,7 +127,7 @@ const BoardEditComponent = () => {
             if (file) {
                 const formData = new FormData();
                 formData.append('file', file);
-                const imageRes = await fetch('https://blogapi.test.zodaland.com/board/image', {
+                const imageRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/board/image`, {
                     mode: 'cors',
                     credentials: 'same-origin',
                     method: 'POST',
