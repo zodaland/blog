@@ -124,7 +124,7 @@ const ResumePage = () => {
                                 </ul>
                             </div>
                         </div>
-                        <div className="flex md:flex-row flex-col md:ml-0 ml-3 mb-8 pt-8">
+                        <div className="flex md:flex-row flex-col mb-8 pt-8">
                             <div className="md:w-1/4 w-full">
                                 <p className="text-3xl font-bold">4senc</p>
                                 <p className="mt-4">2021.11 - 2022.01</p>
@@ -150,7 +150,7 @@ const ResumePage = () => {
                                 </ul>
                             </div>
                         </div>
-                        <div className="flex md:flex-row flex-col md:ml-0 ml-3 mb-8 pt-8">
+                        <div className="flex md:flex-row flex-col mb-8 pt-8">
                             <div className="md:w-1/4 w-full">
                                 <p className="text-3xl font-bold">MallTalk</p>
                                 <p className="mt-4">2021.02 - 2021.03</p>
