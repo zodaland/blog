@@ -76,13 +76,12 @@ const CategoryIndex = ({ page, offset }: PagingProps) => {
     //swr
     const { fallback } = useSWRConfig();
     const url = `/board/${category}/page/${pageOption.page ?? page}/offset/${offset}`;
-    const fallbackData = !tags && pageOption.page === page ? fallback : undefined;
     const { data } = useSWR(
         category
             ? `${url}${tags.length > 0 ? '?tags=' + encodeURI(JSON.stringify(tags)) : ''}`
             : null,
         fetcher,
-        { fallbackData },
+        { fallback },
     );
 
     return (

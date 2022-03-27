@@ -52,7 +52,9 @@ export const getServerSideProps = withGetServerSideProps(
         return {
             props: {
                 category: category,
-                fallback: preFetchData,
+                fallback: {
+                    [url]: preFetchData,
+                },
                 page: page ?? 1,
                 offset: offset ?? 10,
             },
