@@ -2,14 +2,13 @@ import { useEffect } from 'react';
 
 import Chaser from './Chaser';
 
-import { ClassProps } from '../interfaces';
+import { ContentsProps } from '../interfaces';
 
 import { useAppSelector, useAppDispatch } from '../redux/hooks';
 import { setContents } from '../redux/modules/contentsSlice';
 import { setFocus } from '../redux/modules/contentsSlice';
 
-const Contents = ({ className }: ClassProps) => {
-    const query = useAppSelector((state) => state.uri);
+const Contents = ({ data, className }: ContentsProps) => {
     const contents = useAppSelector((state) => state.contents.data);
     const scrollY = useAppSelector((state) => state.scrollY);
     const focus = useAppSelector((state) => state.contents.focus);
@@ -27,12 +26,12 @@ const Contents = ({ className }: ClassProps) => {
             (element: HTMLHeadingElement): string => element.innerText,
         );
         dispatch(setContents(contentsData));
-    }, [query]);
+    }, [data]);
 
     useEffect(() => {
         const handleScroll = () => {
             if (contents.length < 1) return;
-            const targetFocus = contents.findIndex((data: string, idx: number) => {
+            const targetFocus = contents.findIndex((_: string, idx: number) => {
                 const h1Elements = document.querySelectorAll('h1');
                 if (!h1Elements[idx]) return false;
                 const offsetTop = h1Elements[idx].offsetTop;

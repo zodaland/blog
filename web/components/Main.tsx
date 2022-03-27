@@ -47,7 +47,7 @@ const Main = ({ boards, intro }: MainProps) => {
                 </div>
                 <BoardComponent data={boards} />
             </div>
-            <Contents />
+            <Contents data={boards} />
         </>
     );
 };

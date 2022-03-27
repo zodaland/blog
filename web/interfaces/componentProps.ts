@@ -7,6 +7,9 @@ import { IPageOption } from './page';
 export interface ClassProps {
     className?: string;
 }
+export interface ContentsProps extends ClassProps {
+    data: IBoard[];
+}
 export interface ImageProps extends ClassProps {
     file: string;
 }
@@ -70,11 +73,6 @@ export interface SubMenuProps {
 export interface ReCaptchaProps {
     handleVerify: (value: boolean) => void;
 }
-
-export interface ContentsProps {
-    className?: string;
-    contents: string[];
-};
 
 export interface NavigatorProps {
     isMenuOn: boolean;

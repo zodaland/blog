@@ -31,7 +31,7 @@ const Detail = ({ board }: ServerSideBoardProps) => {
                     </ul>
                     <Markdown className="py-8" html={board.content ?? ''} />
                 </section>
-                <Contents />
+                <Contents data={[board]} />
             </div>
         </>
     );

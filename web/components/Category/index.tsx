@@ -91,7 +91,7 @@ const CategoryIndex = ({ page, offset }: PagingProps) => {
             <section className="main">
                 <Bulletin data={data} pageOption={pageOption} handlePage={handlePage} />
             </section>
-            <Contents />
+            <Contents data={data} />
         </>
     );
 };
