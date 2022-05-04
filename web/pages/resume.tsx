@@ -62,12 +62,13 @@ const ResumePage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="mt-8 pl md:text-2xl text-xl">
-                        <ul className="ml-7 list-square list-outside divide-y-8 divide-transparent">
-                            <li>2020년 부터 개발자로 일하고 있습니다.</li>
-                            <li>개발 중 발생하는 오류를 좋아합니다.</li>
-                            <li>짧고 가독성 있는 코드를 좋아합니다.</li>
+                    <div className="mt-8 pl-2">
+                        <ul className="ml-7 list-square list-outside divide-y-8 divide-transparent text-3xl font-bold">
+                            <li>삽질 개발자 입니다.</li>
                         </ul>
+                        <p className="mt-5 pl-7 md:text-2xl text-xl">
+                            공사 현장에서 1년 반 이상 일한 경험으로 쌓은 꾸준함과 공사를 완료하는 성취감을 바탕으로 개발에 임하고 있습니다. 개발 중에 발생하는 오류를 놓지 않고 끝까지 도전하여 해결하는 자신감이 있으며 첫 삽부터 완료까지 3개의 프로젝트를 제작해본 경험을 가지고 있습니다.
+                        </p>
                     </div>
                     <h1 className="text-5xl font-bold mt-28 mb-14">
                         해 왔던 일은<span className="text-sky-300">,</span>
@@ -173,7 +174,7 @@ const ResumePage = () => {
                                 </ul>
                             </div>
                         </div>
-                        <div className="flex md:flex-row flex-col md:ml-0 ml-3 mb-8 pt-8">
+                        <div className="flex md:flex-row flex-col mb-8 pt-8">
                             <div className="md:w-1/4 w-full">
                                 <p className="text-3xl font-bold">인덕대학교</p>
                                 <p className="mt-4">2013.03 - 2020.02</p>
