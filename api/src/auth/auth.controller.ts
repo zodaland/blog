@@ -8,6 +8,17 @@ import { IToken } from './interfaces';
 @Controller('auth')
 export class AuthController {
     constructor(private readonly authService: AuthService) {}
+    @UseGuards(JwtAuthGuard)
+    @Get()
+    pingpong(): any {
+        return { ping: 'pong' };
+    }
+    @Get('recaptcha')
+    async checkReCaptcha(@Query('token') token: string, @Req() { headers }: Request): Promise<boolean> {
+        const ip = headers['x-real-ip'] as string;
+        this.authService.checkReCaptcha(token, ip);
+        return true;
+    }
     @Put()
     async setPassword(@Body('password') password: string): Promise<void> {
         try {
@@ -25,16 +36,5 @@ export class AuthController {
         } catch (_) {
             throw new BadRequestException();
         }
-    }
-    @UseGuards(JwtAuthGuard)
-    @Get()
-    pingpong(): any {
-        return { ping: 'pong' };
-    }
-    @Get('recaptcha')
-    async checkReCaptcha(@Query('token') token: string, @Req() { headers }: Request): Promise<boolean> {
-        const ip = headers['x-real-ip'] as string;
-        this.authService.checkReCaptcha(token, ip);
-        return true;
     }
 }

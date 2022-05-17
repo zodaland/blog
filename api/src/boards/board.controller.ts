@@ -20,7 +20,7 @@ export class BoardController {
     constructor (private readonly boardService: BoardService) {}
 
     @Get('category')
-    async getCategoryAll() {
+    async getCategoryAll(): Promise<string[]> {
         try {
             return await this.boardService.getCategoryAll();
         } catch {
@@ -28,7 +28,7 @@ export class BoardController {
         }
     }
     @Get('posts')
-    async getBoardIdAll() {
+    async getBoardIdAll(): Promise<Board[]> {
         try {
             return await this.boardService.getBoardIdAll();
         } catch {

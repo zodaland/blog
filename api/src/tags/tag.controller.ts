@@ -7,13 +7,14 @@ import { JwtAuthGuard } from '../auth/jwt-auth.guard';
 export class TagController {
     constructor (private readonly tagService: TagService) {}
 
-    @Get(':category')
-    async getCategoryTags(@Param('category') category: string): Promise<string[]> {
-        return await this.tagService.getCategoryTags(category);
-    }
     @Get()
     async getTagAll(): Promise<string[]> {
         return await this.tagService.getTagAll();
+    }
+
+    @Get(':category')
+    async getCategoryTags(@Param('category') category: string): Promise<string[]> {
+        return await this.tagService.getCategoryTags(category);
     }
 
     @UseGuards(JwtAuthGuard)

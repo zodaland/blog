@@ -305,7 +305,7 @@ export class BoardService {
                 qb.andWhere('id IN (:boardIds)', { boardIds});
             }
             const { count } = await qb.getRawOne();
-console.log
+
             return count;
         } catch (e) {
             this.logService.error(e.toString());
