@@ -11,7 +11,7 @@ import { parse } from 'node-html-parser';
 import { InputBoard } from './dto';
 import { Connection } from 'typeorm';
 import { LogService } from '../log/log.service';
-import { ConfigService } from '../config/config.service';
+import { ConfigService } from '@nestjs/config';
 import { MailService } from '../mail/mail.service';
 
 import fetch from "node-fetch";

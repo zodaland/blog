@@ -1,6 +1,4 @@
 import { Module } from '@nestjs/common';
-import { ConfigModule } from './config/config.module';
-import { ConfigService } from './config/config.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Board } from './boards/board.entity';
 import { BoardModule } from './boards/board.module';
@@ -8,15 +6,21 @@ import { TagModule } from './tags/tag.module';
 import { MailModule } from './mail/mail.module';
 import { IntroModule } from './intro/intro.module';
 import { AuthModule } from './auth/auth.module';
+import { ConfigModule } from '@nestjs/config';
+import { ConfigService } from '@nestjs/config';
 
 @Module({
     imports: [
+        ConfigModule.forRoot({
+            envFilePath: `./config/${process.env.NODE_ENV || 'development'}.env`,
+            cache: true,
+            isGlobal: true,
+        }),
         IntroModule,
         MailModule,
         BoardModule,
         TagModule,
         TypeOrmModule.forRootAsync({
-            imports: [ConfigModule.register({folder: './config' })],
             inject: [ConfigService],
             useFactory: (configService: ConfigService) => ({
                 type: 'mysql',
@@ -28,7 +32,6 @@ import { AuthModule } from './auth/auth.module';
                 entities: [__dirname + '/**/*.entity{.ts,.js}'],
             }),
         }),
-        TypeOrmModule.forFeature([Board]),
         AuthModule,
     ],
 })

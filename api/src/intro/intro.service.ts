@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { ConfigService } from '../config/config.service';
+import { ConfigService } from '@nestjs/config';
 import { LogService } from '../log/log.service';
 import { MailService } from '../mail/mail.service';
 import { Intro } from './dto';

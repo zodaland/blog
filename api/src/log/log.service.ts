@@ -1,7 +1,7 @@
 import { Injectable, Inject } from '@nestjs/common';
 import { LOG_OPTIONS } from './constants';
 import { LogOptions } from './interfaces';
-import { ConfigService } from '../config/config.service';
+import { ConfigService } from '@nestjs/config';
 import { createLogger, format, transports, Logger } from 'winston';
 import { existsSync, mkdirSync } from 'fs';
 import 'winston-daily-rotate-file'

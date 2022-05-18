@@ -1,5 +1,5 @@
 import { MAIL_SENDER } from './constants';
-import { ConfigService } from '../config/config.service';
+import { ConfigService } from '@nestjs/config';
 import * as nodemailer from 'nodemailer';
 
 export const mailProviders = [

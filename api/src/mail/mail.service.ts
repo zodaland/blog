@@ -1,5 +1,5 @@
 import { Injectable, Inject } from '@nestjs/common';
-import { ConfigService } from '../config/config.service';
+import { ConfigService } from '@nestjs/config';
 import { MAIL_SENDER } from './constants';
 import { Transporter } from 'nodemailer';
 import { IMail } from './interfaces';

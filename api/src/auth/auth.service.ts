@@ -4,7 +4,7 @@ import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
 import { MailService } from '../mail/mail.service';
 import { LogService } from '../log/log.service';
-import { ConfigService } from '../config/config.service';
+import { ConfigService } from '@nestjs/config';
 
 import fetch from "node-fetch";
 
@@ -22,7 +22,7 @@ export class AuthService {
     setPassword(password: string): Promise<void> {
         return new Promise((resolve, reject) => {
             fs.access(this.path, (err) => {
-                if (!err){
+                if (!err) {
                     reject();
                     return;
                 }

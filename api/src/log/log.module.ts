@@ -1,6 +1,6 @@
 import { Module, DynamicModule } from '@nestjs/common';
 import { LogService } from './log.service';
-import { ConfigModule } from '../config/config.module';
+import { ConfigService } from '@nestjs/config';
 import { LOG_OPTIONS } from './constants';
 
 export interface LogModuleOptions {
@@ -18,9 +18,9 @@ export class LogModule {
                     useValue: options,
                 },
                 LogService,
+                ConfigService,
             ],
             exports: [LogService],
-            imports: [ConfigModule.register({ folder: './config' })],
         };
     }
 }
