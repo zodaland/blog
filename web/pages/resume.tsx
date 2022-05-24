@@ -69,7 +69,7 @@ const ResumePage = () => {
                         </div>
                     </div>
                     <h1 className="text-5xl font-bold mt-10 mb-14 md:ml-0 ml-1">
-                        Intruduce<span className="text-sky-300">,</span>
+                        Introduce<span className="text-sky-300">,</span>
                     </h1>
                     <div className="mt-8 pl-2">
                         <ul className="ml-7 list-square list-outside divide-y-8 divide-transparent">
@@ -145,8 +145,8 @@ const ResumePage = () => {
                                         처리를 통한 이슈 관리
                                     </li>
                                     <li>
-                                        실제 공격(SSH Brute force Attack, kdevtmpfsi, SYN Flooding)을 바탕으로
-                                        기른 보안 개념
+                                        실제 공격(SSH Brute force Attack, kdevtmpfsi, SYN
+                                        Flooding)을 바탕으로 기른 보안 개념
                                     </li>
                                     <li className="ml-5">iptables 관리</li>
                                     <li className="ml-5">Nmap 스캔을 이용한 보안 강화</li>
