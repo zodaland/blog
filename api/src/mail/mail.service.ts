@@ -10,18 +10,20 @@ export class MailService {
         @Inject(MAIL_SENDER) private transporter: Transporter,
         private readonly configService: ConfigService,
     ) {}
-    
+
     async send(mailInput: IMail): Promise<boolean> {
         let text: string = mailInput.content;
-        if (mailInput.name) text = `
+        if (mailInput.name)
+            text = `
 ${mailInput.name}
 ${text}
 `;
-        if (mailInput.email) text = `
+        if (mailInput.email)
+            text = `
 ${mailInput.email}
 ${text}
 `;
-        
+
         const body = {
             from: this.configService.get('MAIL_FROM'),
             to: this.configService.get('MAIL_TO'),
@@ -29,6 +31,6 @@ ${text}
             text,
         };
         const result = await this.transporter.sendMail(body);
-        return (result.response || result.response.split(' ')[0] != '250') ? true : false;
+        return result.response || result.response.split(' ')[0] != '250' ? true : false;
     }
 }

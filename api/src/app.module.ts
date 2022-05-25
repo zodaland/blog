@@ -1,6 +1,5 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { Board } from './boards/board.entity';
 import { BoardModule } from './boards/board.module';
 import { TagModule } from './tags/tag.module';
 import { MailModule } from './mail/mail.module';
@@ -8,6 +7,7 @@ import { IntroModule } from './intro/intro.module';
 import { AuthModule } from './auth/auth.module';
 import { ConfigModule } from '@nestjs/config';
 import { ConfigService } from '@nestjs/config';
+import { CommentModule } from './comment/comment.module';
 
 @Module({
     imports: [
@@ -20,6 +20,7 @@ import { ConfigService } from '@nestjs/config';
         MailModule,
         BoardModule,
         TagModule,
+        CommentModule,
         TypeOrmModule.forRootAsync({
             inject: [ConfigService],
             useFactory: (configService: ConfigService) => ({
@@ -35,4 +36,4 @@ import { ConfigService } from '@nestjs/config';
         AuthModule,
     ],
 })
-export class AppModule { }
+export class AppModule {}

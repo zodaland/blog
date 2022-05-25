@@ -5,10 +5,7 @@ import { LogModule } from '../log/log.module';
 import { MailModule } from '../mail/mail.module';
 
 @Module({
-    imports: [
-        LogModule.register({ file: 'yaml' }),
-        MailModule,
-    ],
+    imports: [LogModule.register({ file: 'yaml' }), MailModule],
     controllers: [IntroController],
     providers: [IntroService],
 })

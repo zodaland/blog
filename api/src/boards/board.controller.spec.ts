@@ -13,17 +13,24 @@ getAllBoard
 tempUploadBoardImage
 ***********************/
 import { Test } from '@nestjs/testing';
-import { BoardModule } from './board.module';
 import { BoardController } from './board.controller';
+import { BoardService } from './board.service';
+
+jest.mock('./board.service');
 
 describe('BoardController', () => {
-    let boardController: BoardController;
+    let controller: BoardController;
 
     beforeAll(async () => {
         const moduleRef = await Test.createTestingModule({
-            imports: [BoardModule],
+            controllers: [BoardController],
+            providers: [BoardService],
         }).compile();
-        boardController = moduleRef.get<BoardController>(BoardController);
+        controller = moduleRef.get<BoardController>(BoardController);
+    });
+
+    it('should be defined', () => {
+        expect(controller).toBeDefined();
     });
 
     describe('getCategoryAll', () => {

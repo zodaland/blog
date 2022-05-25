@@ -1,4 +1,14 @@
-import { Controller, Get, Put, Post, Query, Body, Req, BadRequestException, UseGuards } from '@nestjs/common';
+import {
+    Controller,
+    Get,
+    Put,
+    Post,
+    Query,
+    Body,
+    Req,
+    BadRequestException,
+    UseGuards,
+} from '@nestjs/common';
 import { Request } from 'express';
 import { AuthService } from './auth.service';
 import { JwtAuthGuard } from './jwt-auth.guard';
@@ -14,7 +24,10 @@ export class AuthController {
         return { ping: 'pong' };
     }
     @Get('recaptcha')
-    async checkReCaptcha(@Query('token') token: string, @Req() { headers }: Request): Promise<boolean> {
+    async checkReCaptcha(
+        @Query('token') token: string,
+        @Req() { headers }: Request,
+    ): Promise<boolean> {
         const ip = headers['x-real-ip'] as string;
         this.authService.checkReCaptcha(token, ip);
         return true;

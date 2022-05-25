@@ -1,4 +1,11 @@
-import { Controller, Get, Post, Body, UseGuards, InternalServerErrorException } from '@nestjs/common';
+import {
+    Controller,
+    Get,
+    Post,
+    Body,
+    UseGuards,
+    InternalServerErrorException,
+} from '@nestjs/common';
 import { IntroService } from './intro.service';
 import { Intro } from './dto';
 

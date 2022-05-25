@@ -6,7 +6,7 @@ import { MailService } from '../mail/mail.service';
 import { LogService } from '../log/log.service';
 import { ConfigService } from '@nestjs/config';
 
-import fetch from "node-fetch";
+import fetch from 'node-fetch';
 
 @Injectable()
 export class AuthService {
@@ -42,7 +42,7 @@ export class AuthService {
             });
         });
     }
-    
+
     login(password: string): Promise<any> {
         return new Promise((resolve, reject) => {
             fs.access(this.path, (err) => {
@@ -61,12 +61,12 @@ export class AuthService {
                             return;
                         }
                         const token = this.jwtService.sign({});
-                        
+
                         this.mailService.send({
                             subject: '블로그 인증 알림',
                             content: '블로그 인증됨',
                         });
-                        
+
                         resolve({ token });
                     });
                 });
@@ -81,7 +81,7 @@ export class AuthService {
             const res = await fetch(verificationURL);
             if (res.status !== 200) throw new Error('res status is not 200');
             const body = await res.json();
-            
+
             return body.success;
         } catch (e) {
             this.logService.error(e.toString());
@@ -90,5 +90,5 @@ export class AuthService {
                 content: 'auth 로그 확인 요망',
             });
         }
-    };
+    }
 }

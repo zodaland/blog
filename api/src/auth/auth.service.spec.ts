@@ -1,31 +1,53 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { AuthService } from './auth.service';
-import { JwtModule } from '@nestjs/jwt';
-import { LogModule } from '../log/log.module';
-import { ConfigModule } from '@nestjs/config';
+import { JwtService } from '@nestjs/jwt';
+import { ConfigService } from '@nestjs/config';
+import { LogService } from '../log/log.service';
+import { MailService } from '../mail/mail.service';
+
+class MockLogService {
+    error() {}
+}
+class MockMailService {
+    send() {}
+}
+class MockConfigService {
+    get() {}
+}
+class MockJwtService {
+    sign() {}
+}
 
 describe('AuthService', () => {
-    let authService: AuthService;
+    let service: AuthService;
 
     beforeEach(async () => {
         const module: TestingModule = await Test.createTestingModule({
-            imports: [
-                JwtModule.register({
-                    secret: jwtConstants.secret,
-                }),
-                LogModule.register({ file: 'auth' }),
-                ConfigModule.forRoot({
-                    envFilePath: './config/development.env',
-                }),
-                MailModule,
+            providers: [
+                AuthService,
+                {
+                    provide: LogService,
+                    useValue: new MockLogService(),
+                },
+                {
+                    provide: MailService,
+                    useValue: new MockMailService(),
+                },
+                {
+                    provide: ConfigService,
+                    useValue: new MockConfigService(),
+                },
+                {
+                    provide: JwtService,
+                    useValue: new MockJwtService(),
+                },
             ],
-            providers: [AuthService, JwtStrategy],
         }).compile();
 
-        authService = module.get<AuthService>(AuthService);
+        service = module.get<AuthService>(AuthService);
     });
 
     it('should be defined', () => {
-      expect(service).toBeDefined();
+        expect(service).toBeDefined();
     });
 });
