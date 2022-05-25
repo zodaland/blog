@@ -23,7 +23,7 @@ WEB : https://blog.test.zodaland.com
 ### Production
 API : https://blogpai.zodaland.com
 
-WEB : https://www.zodaland.com
+WEB : https://www.zodaland.com, https://zoda.land
 
 
 # BROWSER SUPPORT
