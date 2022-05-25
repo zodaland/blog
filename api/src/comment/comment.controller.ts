@@ -30,7 +30,6 @@ export class CommentController {
 
     @Post()
     async save(@Body('comment') commentDto: CommentDto): Promise<boolean> {
-        console.log(commentDto);
         try {
             await this.commentService.save(commentDto);
             return true;

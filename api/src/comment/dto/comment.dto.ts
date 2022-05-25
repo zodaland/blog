@@ -30,6 +30,10 @@ export class CommentDto {
     @IsBoolean()
     private: boolean;
 
+    @IsOptional()
+    @IsInt()
+    addedId: number;
+
     @IsNotEmpty()
     @IsString()
     @Length(14, 14)

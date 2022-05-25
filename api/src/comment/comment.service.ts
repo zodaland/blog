@@ -14,7 +14,7 @@ export class CommentService {
 
     async findAllByBoardId(boardId: number): Promise<Comment[]> {
         const comments: Comment[] = await this.commentRepository.find({
-            select: ['name', 'comment', 'date', 'private'],
+            select: ['name', 'comment', 'date', 'private', 'addedId'],
             where: {
                 boardId,
             },
