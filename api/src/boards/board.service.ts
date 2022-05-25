@@ -1,4 +1,4 @@
-import { Injectable, Inject } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Express } from 'express';
 import { Repository } from 'typeorm';
@@ -8,13 +8,12 @@ import { BoardTag } from './board_tag.entity';
 import { Tag } from '../tags/tag.entity';
 import { ICategory } from './interfaces';
 import { parse } from 'node-html-parser';
-import { InputBoard } from './dto';
 import { Connection } from 'typeorm';
 import { LogService } from '../log/log.service';
 import { ConfigService } from '@nestjs/config';
 import { MailService } from '../mail/mail.service';
 
-import fetch from "node-fetch";
+import fetch from 'node-fetch';
 
 @Injectable()
 export class BoardService {
@@ -29,7 +28,8 @@ export class BoardService {
     ) {}
     async getCategoryAll(): Promise<string[]> {
         try {
-            const categoryRows: ICategory[] = await this.boardRepository.createQueryBuilder('board')
+            const categoryRows: ICategory[] = await this.boardRepository
+                .createQueryBuilder('board')
                 .select('distinct category')
                 .groupBy('category')
                 .orderBy('MIN(date)', 'ASC')
@@ -46,7 +46,8 @@ export class BoardService {
     }
     async getBoardIdAll(): Promise<Board[]> {
         try {
-            return this.boardRepository.createQueryBuilder('board')
+            return this.boardRepository
+                .createQueryBuilder('board')
                 .select(['id', 'category'])
                 .where('private = false')
                 .getRawMany();
@@ -60,7 +61,8 @@ export class BoardService {
     }
     async getBoardIdAllByCategory(category: string): Promise<number[]> {
         try {
-            const boardIdRows: Board[] = await this.boardRepository.createQueryBuilder('board')
+            const boardIdRows: Board[] = await this.boardRepository
+                .createQueryBuilder('board')
                 .select('board.id')
                 .where('category = :category', { category })
                 .andWhere('private = false')
@@ -77,7 +79,8 @@ export class BoardService {
     }
     async getOne(category: string, id: number): Promise<Board> {
         try {
-            const row: Board|undefined =  await this.boardRepository.createQueryBuilder('board')
+            const row: Board | undefined = await this.boardRepository
+                .createQueryBuilder('board')
                 .leftJoinAndSelect('board.boardTags', 'boardTag')
                 .leftJoinAndSelect('boardTag.tag', 'tag')
                 .where('board.category = :category', { category })
@@ -92,12 +95,18 @@ export class BoardService {
             });
         }
     }
-    async getMore(category: string, page: number, offset: number, tags: string[]|null): Promise<Board[]> {
+    async getMore(
+        category: string,
+        page: number,
+        offset: number,
+        tags: string[] | null,
+    ): Promise<Board[]> {
         const skip: number = (page - 1) * offset;
         let rawRows: Board[];
 
         try {
-            let qb = this.boardRepository.createQueryBuilder('board')
+            const qb = this.boardRepository
+                .createQueryBuilder('board')
                 .leftJoinAndSelect('board.boardTags', 'boardTag')
                 .leftJoinAndSelect('boardTag.tag', 'tag')
                 .where('board.category = :category', { category })
@@ -107,14 +116,15 @@ export class BoardService {
                 .take(offset);
 
             if (tags) {
-                const boardTagRows = await this.boardTagRepository.createQueryBuilder('boardTag')
+                const boardTagRows = await this.boardTagRepository
+                    .createQueryBuilder('boardTag')
                     .select('boardTag.board_id as id')
                     .leftJoin('boardTag.tag', 'tag')
                     .where('tag.name IN (:tags)', { tags })
                     .getRawMany();
                 const boardIds = boardTagRows.map((row: BoardTag) => row.id);
 
-                qb.andWhere('board.id IN (:boardIds)', { boardIds});
+                qb.andWhere('board.id IN (:boardIds)', { boardIds });
             }
 
             rawRows = await qb.getMany();
@@ -125,11 +135,11 @@ export class BoardService {
                 content: 'board로그 확인 요망',
             });
         }
-        
+
         if (tags) {
-            rawRows = rawRows.filter(row => {
-                const rowTags: string[] = row.boardTags.map(boardTag => boardTag.tag.name);
-                const isIncludeAllTag: boolean = tags.every(tag => rowTags.includes(tag));
+            rawRows = rawRows.filter((row) => {
+                const rowTags: string[] = row.boardTags.map((boardTag) => boardTag.tag.name);
+                const isIncludeAllTag: boolean = tags.every((tag) => rowTags.includes(tag));
                 return isIncludeAllTag;
             });
         }
@@ -138,7 +148,8 @@ export class BoardService {
     }
     async getAFewBoardOfAllCategory(): Promise<Board[]> {
         try {
-            const boardRows: Board[] = await this.boardRepository.createQueryBuilder('board')
+            const boardRows: Board[] = await this.boardRepository
+                .createQueryBuilder('board')
                 .leftJoinAndSelect('board.boardTags', 'boardTag')
                 .leftJoinAndSelect('boardTag.tag', 'tag')
                 .where('private = false')
@@ -169,17 +180,22 @@ export class BoardService {
             await queryRunner.connect();
             await queryRunner.startTransaction();
 
-            const boardTags = await Promise.all(tags.map(async (tag: Tag) => {
-                const existTag = await this.tagRepository.findOne({ where: { name: tag.name } });
-                return plainToClass(BoardTag, { tag: existTag ? existTag: tag });
-            }));
+            const boardTags = await Promise.all(
+                tags.map(async (tag: Tag) => {
+                    const existTag = await this.tagRepository.findOne({
+                        where: { name: tag.name },
+                    });
+                    return plainToClass(BoardTag, { tag: existTag ? existTag : tag });
+                }),
+            );
             const boardWithTags: Board = plainToClass(Board, {
                 ...board,
-                boardTags
+                boardTags,
             });
 
             if (board.id) {
-                await this.boardTagRepository.createQueryBuilder()
+                await this.boardTagRepository
+                    .createQueryBuilder()
                     .delete()
                     .where('board_id = :id', { id: board.id })
                     .execute();
@@ -204,51 +220,57 @@ export class BoardService {
             await queryRunner.connect();
             await queryRunner.startTransaction();
             //image delete
-            const { file, content } = await this.boardRepository.createQueryBuilder()
+            const { file, content } = await this.boardRepository
+                .createQueryBuilder()
                 .select(['file', 'content'])
                 .where('id= :id', { id })
                 .getRawOne();
-                
+
             const res = await fetch(`https://image.zodaland.com/delete/${file}`, {
-                method: "DELETE",
+                method: 'DELETE',
             });
             if (res.status !== 200) throw new Error('image res status is not 200');
             const isSuccess = await res.text();
             if (!isSuccess) throw new Error('image res is 200 but image delete not success');
-            
+
             //content images delete
             const html = parse(content);
             const imgElements = html.querySelectorAll('img');
             if (imgElements.length > 0) {
-                const imageURLs = imgElements.map(element => {
+                const imageURLs = imgElements.map((element) => {
                     const src = element.getAttribute('src');
                     const lastIndex = src.lastIndexOf('/');
                     const imageName = src.substr(lastIndex + 1);
                     return imageName;
                 });
-                await Promise.all(imageURLs.map(async imageName => {
-                    const res = await fetch(`https://image.zodaland.com/delete/${imageName}`, {
-                        method: "DELETE",
-                    });
-                    if (res.status !== 200) throw new Error('image res status is not 200');
-                    const isSuccess = await res.text();
-                    if (!isSuccess) throw new Error('image res is 200 but image delete not success');
-                }));
+                await Promise.all(
+                    imageURLs.map(async (imageName) => {
+                        const res = await fetch(`https://image.zodaland.com/delete/${imageName}`, {
+                            method: 'DELETE',
+                        });
+                        if (res.status !== 200) throw new Error('image res status is not 200');
+                        const isSuccess = await res.text();
+                        if (!isSuccess)
+                            throw new Error('image res is 200 but image delete not success');
+                    }),
+                );
             }
-            
+
             //find tag ids
-            const tagIdRows = await this.boardTagRepository.createQueryBuilder('board_tag')
+            const tagIdRows = await this.boardTagRepository
+                .createQueryBuilder('board_tag')
                 .select('tag_id as tagId')
                 .where('board_id = :id', { id })
                 .getRawMany();
-            const tagIds: number[] = tagIdRows.map(tagIdRow => tagIdRow.tagId);
+            const tagIds: number[] = tagIdRows.map((tagIdRow) => tagIdRow.tagId);
 
             //board delete
             await this.boardRepository.delete(id);
-            
+
             //tag delete
             for (const tagId of tagIds) {
-                const { leftTagCount } = await this.boardTagRepository.createQueryBuilder()
+                const { leftTagCount } = await this.boardTagRepository
+                    .createQueryBuilder()
                     .select('COUNT(id) as leftTagCount')
                     .where('tag_id = :tagId', { tagId })
                     .getRawOne();
@@ -271,7 +293,8 @@ export class BoardService {
     async getSummaryBoards(category: string, page: number, offset: number): Promise<Board[]> {
         try {
             const skip: number = (page - 1) * offset;
-            const rows: Board[] = await this.boardRepository.createQueryBuilder('board')
+            const rows: Board[] = await this.boardRepository
+                .createQueryBuilder('board')
                 .select(['board.id', 'board.title'])
                 .where('board.category = :category', { category })
                 .orderBy('board.date', 'DESC')
@@ -289,20 +312,22 @@ export class BoardService {
     }
     async getCategoryCount(category: string, tags: string[]): Promise<number> {
         try {
-            const qb = this.boardRepository.createQueryBuilder()
-                    .select('COUNT(id) as count')
-                    .where('category = :category', { category })
-                    .andWhere('private = false')
+            const qb = this.boardRepository
+                .createQueryBuilder()
+                .select('COUNT(id) as count')
+                .where('category = :category', { category })
+                .andWhere('private = false');
 
             if (tags) {
-                const boardTagRows = await this.boardTagRepository.createQueryBuilder('boardTag')
+                const boardTagRows = await this.boardTagRepository
+                    .createQueryBuilder('boardTag')
                     .select('boardTag.board_id as id')
                     .leftJoin('boardTag.tag', 'tag')
                     .where('tag.name IN (:tags)', { tags })
                     .getRawMany();
                 const boardIds = boardTagRows.map((row: BoardTag) => row.id);
 
-                qb.andWhere('id IN (:boardIds)', { boardIds});
+                qb.andWhere('id IN (:boardIds)', { boardIds });
             }
             const { count } = await qb.getRawOne();
 
@@ -317,10 +342,11 @@ export class BoardService {
     }
     async getCategoryCountAll(category: string): Promise<number> {
         try {
-            const { count } = await this.boardRepository.createQueryBuilder()
-                    .select('COUNT(id) as count')
-                    .where('category = :category', { category })
-                    .getRawOne();
+            const { count } = await this.boardRepository
+                .createQueryBuilder()
+                .select('COUNT(id) as count')
+                .where('category = :category', { category })
+                .getRawOne();
             return count;
         } catch (e) {
             this.logService.error(e.toString());
@@ -337,7 +363,7 @@ export class BoardService {
             formData.append('file', file.buffer);
             formData.append('name', file.originalname);
             const res = await fetch(this.configService.get('IMAGE_SERVER_URL'), {
-                method: "POST",
+                method: 'POST',
                 body: formData,
             });
             if (res.status !== 200) throw new Error('image res status is not 200');
@@ -360,7 +386,9 @@ export class BoardService {
                 const filteredContent = innerText.replace(/<[^>]+>|\&lt;|\&gt;/gi, '');
                 const filteredContentExist = filteredContent.toLowerCase().includes(keyword);
                 const filteredTitleExist = row.title.toLowerCase().includes(keyword);
-                const filteredTagExist = row.boardTags.some((boardTag: BoardTag) => boardTag.tag.name.toLowerCase().includes(keyword));
+                const filteredTagExist = row.boardTags.some((boardTag: BoardTag) =>
+                    boardTag.tag.name.toLowerCase().includes(keyword),
+                );
 
                 if (filteredContentExist || filteredTitleExist || filteredTagExist) {
                     result = true;
@@ -368,7 +396,7 @@ export class BoardService {
 
                 return result;
             });
-            const resultRows = this.convertBoardToSummaryBoards(matchedRows)
+            const resultRows = this.convertBoardToSummaryBoards(matchedRows);
             return resultRows;
         } catch (e) {
             this.logService.error(e.toString());

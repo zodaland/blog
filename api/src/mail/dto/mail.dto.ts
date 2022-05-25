@@ -1,5 +1,4 @@
 import { IsOptional, IsEmail, IsNotEmpty, Matches } from 'class-validator';
-import { Type } from 'class-transformer';
 
 export class InputMail {
     @IsNotEmpty()

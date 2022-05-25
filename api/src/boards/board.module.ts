@@ -1,5 +1,5 @@
-import { Module, NestModule, RequestMethod, MiddlewareConsumer, forwardRef } from '@nestjs/common';
-import { BoardController} from './board.controller';
+import { Module, NestModule, MiddlewareConsumer } from '@nestjs/common';
+import { BoardController } from './board.controller';
 import { BoardService } from './board.service';
 import { BoardMiddleware } from './board.middleware';
 import { TypeOrmModule } from '@nestjs/typeorm';
@@ -16,14 +16,10 @@ import { MailModule } from '../mail/mail.module';
         MailModule,
     ],
     controllers: [BoardController],
-    providers: [
-        BoardService,
-    ],
+    providers: [BoardService],
 })
 export class BoardModule implements NestModule {
     configure(consumer: MiddlewareConsumer) {
-        consumer
-            .apply(BoardMiddleware)
-            .forRoutes(BoardController);
+        consumer.apply(BoardMiddleware).forRoutes(BoardController);
     }
 }

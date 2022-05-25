@@ -49,7 +49,7 @@ export class Board {
     })
     private: boolean;
 
-    @OneToMany(type => BoardTag, boardTag => boardTag.board, { eager: true, cascade: true })
-    @JoinColumn({ name: 'id', referencedColumnName: 'boardId'})
-    boardTags: BoardTag[]
+    @OneToMany(() => BoardTag, (boardTag) => boardTag.board, { eager: true, cascade: true })
+    @JoinColumn({ name: 'id', referencedColumnName: 'boardId' })
+    boardTags: BoardTag[];
 }

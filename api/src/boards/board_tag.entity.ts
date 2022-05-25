@@ -10,12 +10,12 @@ export class BoardTag {
     })
     id: number;
 
-    @ManyToOne(type => Board, { onDelete: 'CASCADE' })
-    @JoinColumn({ name: 'board_id', referencedColumnName: 'id'})
+    @ManyToOne(() => Board, { onDelete: 'CASCADE' })
+    @JoinColumn({ name: 'board_id', referencedColumnName: 'id' })
     board: Board;
 
     //cascade : tag is created if boardTag has created
-    @ManyToOne(type => Tag, { eager: true, cascade: true })
-    @JoinColumn({ name: 'tag_id', referencedColumnName: 'id'})
+    @ManyToOne(() => Tag, { eager: true, cascade: true })
+    @JoinColumn({ name: 'tag_id', referencedColumnName: 'id' })
     tag: Tag;
 }

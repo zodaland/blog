@@ -17,6 +17,9 @@ export class Tag {
     })
     name: string;
 
-    @OneToMany(type => BoardTag, boardTag => boardTag.tag, { onDelete: 'CASCADE', orphanedRowAction: 'delete' })
+    @OneToMany(() => BoardTag, (boardTag) => boardTag.tag, {
+        onDelete: 'CASCADE',
+        orphanedRowAction: 'delete',
+    })
     boardTags: BoardTag[];
 }

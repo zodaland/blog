@@ -10,7 +10,7 @@ import { readFile, writeFile } from 'fs';
 export class IntroService {
     private path: string;
     private defaultIntro: Intro;
-    
+
     constructor(
         private readonly configService: ConfigService,
         private readonly logService: LogService,
@@ -23,7 +23,7 @@ export class IntroService {
     }
 
     async getIntro(): Promise<Intro> {
-        return new Promise((resolve, _) => {
+        return new Promise((resolve) => {
             readFile(this.path, 'utf-8', (err, rawIntro) => {
                 if (err) {
                     this.logService.error(JSON.stringify(err));
@@ -33,7 +33,7 @@ export class IntroService {
                     });
                     resolve(this.defaultIntro);
                 } else {
-                    const intro: Intro|null = yaml.parse(rawIntro);
+                    const intro: Intro | null = yaml.parse(rawIntro);
                     if (!intro) {
                         resolve(this.defaultIntro);
                     } else {

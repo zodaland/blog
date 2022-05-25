@@ -1,21 +1,56 @@
 import { Test } from '@nestjs/testing';
-import { BoardModule } from './board.module';
 import { BoardService } from './board.service';
+import { MailService } from '../mail/mail.service';
+import { LogService } from '../log/log.service';
+import { ConfigService } from '@nestjs/config';
+import { Board } from './board.entity';
+import { BoardTag } from './board_tag.entity';
+import { Tag } from '../tags/tag.entity';
+import { getRepositoryToken } from '@nestjs/typeorm';
+import { Repository } from 'typeorm/repository/Repository';
+import { Connection } from 'typeorm/connection/Connection';
+
+jest.mock('../mail/mail.service');
+jest.mock('../log/log.service');
+jest.mock('@nestjs/config');
+jest.mock('typeorm/repository/Repository');
+jest.mock('typeorm/connection/Connection');
 
 describe('BoardService', () => {
-    let boardService: BoardService;
+    let service: BoardService;
 
     beforeAll(async () => {
         const moduleRef = await Test.createTestingModule({
-            imports: [ BoardModule ],
+            providers: [
+                BoardService,
+                MailService,
+                LogService,
+                ConfigService,
+                {
+                    provide: getRepositoryToken(Board),
+                    useClass: Repository,
+                },
+                {
+                    provide: getRepositoryToken(BoardTag),
+                    useClass: Repository,
+                },
+                {
+                    provide: getRepositoryToken(Tag),
+                    useClass: Repository,
+                },
+                {
+                    provide: Connection,
+                    useClass: Connection,
+                },
+            ],
         }).compile();
 
-        boardService = moduleRef.get<BoardService>(BoardService);
+        service = moduleRef.get<BoardService>(BoardService);
     });
 
     describe('getCategoryAll', () => {
         it('should be defined', () => {
-            expect(boardService.getCategoryAll).toBeDefined();   
+            expect(service.getCategoryAll).toBeDefined();
         });
     });
 

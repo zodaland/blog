@@ -1,4 +1,4 @@
-import { Injectable, Inject } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Tag } from './tag.entity';
@@ -12,13 +12,15 @@ export class TagService {
         @InjectRepository(Board) private boardRepository: Repository<Board>,
     ) {}
     async getCategoryTags(category: string): Promise<string[]> {
-        const boardIdRows: Board[] = await this.boardRepository.createQueryBuilder('board')
+        const boardIdRows: Board[] = await this.boardRepository
+            .createQueryBuilder('board')
             .select('board.id')
             .where('category = :category', { category })
             .getMany();
         const boardIds: number[] = boardIdRows.map((row: Board) => row.id);
 
-        const tagRows: Tag[] = await this.tagRepository.createQueryBuilder('tag')
+        const tagRows: Tag[] = await this.tagRepository
+            .createQueryBuilder('tag')
             .select('distinct name')
             .leftJoin('tag.boardTags', 'boardTag')
             .where('boardTag.board_id IN (:...ids)', { ids: [...boardIds] })
@@ -27,7 +29,8 @@ export class TagService {
         return tags;
     }
     async getTagAll(): Promise<string[]> {
-        const tagRows: Tag[] = await this.tagRepository.createQueryBuilder('tag')
+        const tagRows: Tag[] = await this.tagRepository
+            .createQueryBuilder('tag')
             .select('name')
             .getRawMany();
         const tags: string[] = tagRows.map((row: Tag) => row.name);

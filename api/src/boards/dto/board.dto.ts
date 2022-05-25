@@ -1,5 +1,4 @@
-import { IsOptional, IsInt, IsString, IsBoolean, IsNotEmpty, Matches, ValidateNested } from 'class-validator';
-import { Type } from 'class-transformer';
+import { IsOptional, IsInt, IsString, IsBoolean, IsNotEmpty, Matches } from 'class-validator';
 
 export class InputBoard {
     @IsOptional()
@@ -23,7 +22,7 @@ export class InputBoard {
     @IsNotEmpty()
     @Matches(/^[0-9]{8}$/)
     date: string;
-    
+
     @IsOptional()
     @IsBoolean()
     private: boolean;

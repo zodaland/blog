@@ -1,4 +1,18 @@
-import { Controller, Delete, Get, Post, Put, Body, Param, Query, UploadedFile, ParseIntPipe, BadRequestException , InternalServerErrorException, UseGuards, UseInterceptors, Request } from '@nestjs/common';
+import {
+    Controller,
+    Delete,
+    Get,
+    Post,
+    Body,
+    Param,
+    Query,
+    UploadedFile,
+    ParseIntPipe,
+    BadRequestException,
+    InternalServerErrorException,
+    UseGuards,
+    UseInterceptors,
+} from '@nestjs/common';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { Express } from 'express';
 
@@ -17,7 +31,7 @@ import { plainToClass } from 'class-transformer';
 
 @Controller('board')
 export class BoardController {
-    constructor (private readonly boardService: BoardService) {}
+    constructor(private readonly boardService: BoardService) {}
 
     @Get('category')
     async getCategoryAll(): Promise<string[]> {
@@ -44,9 +58,12 @@ export class BoardController {
         }
     }
     @Get(':category/count')
-    async getCategoryCount(@Param('category') category: string,  @Query('tags') tags: string|undefined): Promise<ICount> {
+    async getCategoryCount(
+        @Param('category') category: string,
+        @Query('tags') tags: string | undefined,
+    ): Promise<ICount> {
         try {
-            const parsedTags: string[]|null = tags ? JSON.parse(tags) : null;
+            const parsedTags: string[] | null = tags ? JSON.parse(tags) : null;
             const count: number = await this.boardService.getCategoryCount(category, parsedTags);
             return { count };
         } catch {
@@ -54,7 +71,10 @@ export class BoardController {
         }
     }
     @Get(':category/:id')
-    async getOne(@Param('category') category: string, @Param('id', ParseIntPipe) id: number): Promise<Board> {
+    async getOne(
+        @Param('category') category: string,
+        @Param('id', ParseIntPipe) id: number,
+    ): Promise<Board> {
         let result: Board;
         try {
             result = await this.boardService.getOne(category, id);
@@ -62,14 +82,19 @@ export class BoardController {
             throw new InternalServerErrorException();
         }
         if (!result) throw new BadRequestException();
-        
+
         return result;
     }
     @Get(':category/page/:page/offset/:offset')
-    async getMore(@Param('category') category: string, @Param('page', ParseIntPipe) page: number, @Param('offset', ParseIntPipe) offset: number, @Query('tags') tags: string|undefined): Promise<Board[]> {
+    async getMore(
+        @Param('category') category: string,
+        @Param('page', ParseIntPipe) page: number,
+        @Param('offset', ParseIntPipe) offset: number,
+        @Query('tags') tags: string | undefined,
+    ): Promise<Board[]> {
         if (offset < 1) throw new BadRequestException();
         try {
-            const parsedTags: string[]|null = tags ? JSON.parse(tags) : null;
+            const parsedTags: string[] | null = tags ? JSON.parse(tags) : null;
             return await this.boardService.getMore(category, page, offset, parsedTags);
         } catch {
             throw new InternalServerErrorException();
@@ -95,7 +120,10 @@ export class BoardController {
     }
     @UseGuards(JwtAuthGuard)
     @Post()
-    async setBoard(@Body('board') plainBoard: InputBoard, @Body('tags') plainTags: InputTag[]): Promise<boolean> {
+    async setBoard(
+        @Body('board') plainBoard: InputBoard,
+        @Body('tags') plainTags: InputTag[],
+    ): Promise<boolean> {
         try {
             const board: Board = plainToClass(Board, plainBoard);
             const tags: Tag[] = plainTags.map((tag: InputTag) => plainToClass(Tag, tag));
@@ -115,15 +143,23 @@ export class BoardController {
             throw new InternalServerErrorException();
         }
     }
-    
+
     @UseGuards(JwtAuthGuard)
     @Get('summary/:category/page/:page/offset/:offset')
-    async getAllBoard(@Param('category') category: string, @Param('page', ParseIntPipe) page: number, @Param('offset', ParseIntPipe) offset: number): Promise<Board[]> {
+    async getAllBoard(
+        @Param('category') category: string,
+        @Param('page', ParseIntPipe) page: number,
+        @Param('offset', ParseIntPipe) offset: number,
+    ): Promise<Board[]> {
         if (offset < 1) {
             throw new BadRequestException();
         }
         try {
-            const boards: Board[] = await this.boardService.getSummaryBoards(category, page, offset);
+            const boards: Board[] = await this.boardService.getSummaryBoards(
+                category,
+                page,
+                offset,
+            );
             return boards;
         } catch (e) {
             throw new InternalServerErrorException();
