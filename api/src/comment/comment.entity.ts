@@ -42,14 +42,6 @@ export class Comment {
     private: boolean;
 
     @Column({
-        name: 'added_id',
-        type: 'int',
-        unsigned: true,
-        default: null,
-    })
-    addedId: number;
-
-    @Column({
         name: 'board_id',
         type: 'int',
         unsigned: true,
