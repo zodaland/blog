@@ -13,26 +13,19 @@ export class CommentDto {
     @IsInt()
     id: number;
 
-    @IsNotEmpty()
-    @Matches(/^[0-9a-zA-Z가-힣]+$/)
-    @Length(1, 20)
+    @Matches(/^[0-9a-zA-Z가-힣]*$/)
+    @Length(0, 10)
     name: string;
 
     @IsNotEmpty()
-    @Matches(/^[-0-9a-zA-Z가-힣ㄱ-ㅎㅏ-ㅣ!.,();]+$/)
+    @Matches(/^[-0-9a-zA-Z가-힣ㄱ-ㅎㅏ-ㅣ!.,();~ \n]+$/)
     comment: string;
 
-    @IsNotEmpty()
-    @Length(4, 30)
+    @Length(0, 30)
     password: string;
 
-    @IsOptional()
     @IsBoolean()
     private: boolean;
-
-    @IsOptional()
-    @IsInt()
-    addedId: number;
 
     @IsNotEmpty()
     @IsString()
