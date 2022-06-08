@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+import { KeyedMutator } from 'swr';
 
 import { IBoard, ITag } from './board';
 import { IIntro } from './intro';
@@ -89,4 +90,13 @@ export interface ChildrenProps {
 
 export interface SearchProps {
     text: string;
+}
+
+export interface CommentProps {
+    id: number | undefined;
+}
+
+export interface CommentEditProps {
+    id: number | undefined;
+    mutate: KeyedMutator<any>;
 }

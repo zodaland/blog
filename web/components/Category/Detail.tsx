@@ -3,6 +3,7 @@ import Img from '../Img';
 import Contents from '../Contents';
 import Tags from '../Tags';
 import Loading from '../Loading';
+import Comment from '../Comment';
 
 import { getDate } from '../../lib/util';
 
@@ -30,6 +31,8 @@ const Detail = ({ board }: ServerSideBoardProps) => {
                             ))}
                     </ul>
                     <Markdown className="py-8" html={board.content ?? ''} />
+                    <hr className="w-full border-1 border-solid my-5 border-gray-300" />
+                    <Comment id={board.id} />
                 </section>
                 <Contents data={[board]} />
             </div>

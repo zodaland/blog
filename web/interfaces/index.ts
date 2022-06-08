@@ -7,3 +7,4 @@ export * from './error';
 export * from './intro';
 export * from './page';
 export * from './mail';
+export * from './comment';

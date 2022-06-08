@@ -11,8 +11,12 @@ import moment from 'moment';
 
 import { ErrorWithStatus } from '../interfaces';
 
-export const getDate = (date: string | number) =>
-    moment(date, 'YYYYMMDD').format('YYYY년 MM월 DD일');
+export const getDate = (date: string) =>
+    date.length === 8
+        ? moment(date, 'YYYYMMDD').format('YYYY년 MM월 DD일')
+        : moment(date, 'YYYYMMDDHHmmss').format('YYYY년 MM월 DD일 HH시 mm분');
+
+export const getSimpleDate = () => moment().format('YYYYMMDDHHmmss');
 
 export const withGetServerSideProps = (
     getServersideProps: GetServerSideProps,
