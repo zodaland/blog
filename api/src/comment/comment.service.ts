@@ -14,12 +14,12 @@ export class CommentService {
 
     async findAllByBoardId(boardId: number): Promise<Comment[]> {
         const comments: Comment[] = await this.commentRepository.find({
-            select: ['name', 'comment', 'date', 'private', 'addedId'],
+            select: ['id', 'name', 'comment', 'date', 'private'],
             where: {
                 boardId,
             },
             order: {
-                date: 'DESC',
+                date: 'ASC',
             },
         });
 
@@ -34,12 +34,16 @@ export class CommentService {
 
     save(commentDto: CommentDto): Promise<void> {
         return new Promise((resolve, reject) => {
-            bcrypt.hash(commentDto.password, this.saltRounds, (err, password) => {
+            bcrypt.hash(commentDto.password || '1234', this.saltRounds, (err, password) => {
                 if (err) {
                     reject();
                     return;
                 }
-                const comment: Comment = { ...commentDto, password };
+                const comment: Comment = {
+                    ...commentDto,
+                    name: commentDto.name || '익명',
+                    password,
+                };
                 this.commentRepository
                     .save(comment)
                     .then(() => resolve())
