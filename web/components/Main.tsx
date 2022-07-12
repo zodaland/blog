@@ -30,11 +30,6 @@ const Main = ({ boards, intro }: MainProps) => {
                                 </h1>
                             </div>
                             <div className="flex justify-self-end md:space-x-6 space-x-3 h-9">
-                                <Link href="/resume">
-                                    <a>
-                                        <FileText className="p-1 w-8 h-8 hover:text-gray-300 transition duration-300" />
-                                    </a>
-                                </Link>
                                 <Link href="/mail">
                                     <a>
                                         <AtSign className="p-1 w-8 h-8 hover:text-gray-300 transition duration-300" />
@@ -51,7 +46,6 @@ const Main = ({ boards, intro }: MainProps) => {
         </>
     );
 };
-//게시글 입력기능 만들기, 검색기능 만들기, 방문자 체크, 백단 auth 추가
 const BoardComponent = ({ data }: BoardsProps) => {
     return (
         <>
