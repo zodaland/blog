@@ -88,6 +88,7 @@ const ResumePage = () => {
                             </li>
                         </ul>
                     </div>
+                    <div className="pt-20" />
                     <h1 className="text-5xl font-bold mt-28 mb-14 md:ml-0 ml-1">
                         Experience<span className="text-sky-300">,</span>
                     </h1>
@@ -101,20 +102,25 @@ const ResumePage = () => {
                             <div className="md:w-3/4 w-full">
                                 <p className="h-9 pt-4 font-thin">연 매출 3400억의 중견 IT기업</p>
                                 <ul className="mt-4 ml-5 list-square list-outside divide-y-4 divide-transparent">
-                                    <li>RFC 5730(EPP)표준의 백엔드 도메인 시스템 개발</li>
-                                    <li>확장성 및 유지보수성 향상을 위한 레거시 시스템 개선</li>
-                                    <li>2021년 8월 부터 메인 개발자로 개발, 배포, 운영을 전담</li>
-                                    <li>도메인 및 DNS 시스템의 전반적인 관리와 유지보수</li>
+                                    <li>PHP기반의 웹 서비스와 JAVA 기반의 백엔드 도메인 통신 시스템 개발 전담</li>
+                                    <li>상위 기관, 사내 시스템 간의 도메인 및 정산 동기화 스케줄러 개발</li>
+                                    <li>BIND/named 프로그램 설정 자동화 구현을 통한 DNS API 개발</li>
                                     <li>
-                                        SQL 튜닝 및 인덱스 설정을 통한 정산 시스템 로딩 시간 평균
+                                        MySQL 성능 튜닝을 통한 정산 시스템 로딩 시간 평균
                                         1.51초에서 0.36초로 성능 개선
                                     </li>
-                                    <li>DNS 설정 자동화 API 개발</li>
+                                    <li>
+                                        <p className="text-lg font-bold">EPP 모듈 통합</p>
+                                        <ul className="ml-5 list-square list-outside divide-y-4 divide-transparent">
+                                            <li></li>
+                                        </ul>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <h1 className="text-5xl font-bold mt-28 mb-14 md:ml-0 ml-1">
+                       <div className="pt-80" />
+                    <h1 className="text-5xl font-bold mt-96 mb-14 md:ml-0 ml-1">
                         Project<span className="text-sky-300">,</span>
                     </h1>
                     <div className="divide-y md:mx-0 mx-3">
@@ -186,7 +192,7 @@ const ResumePage = () => {
                                 </ul>
                             </div>
                         </div>
-                        <div className="flex md:flex-row flex-col mb-8 pt-8">
+                        <div className="flex md:flex-row flex-col mb-8 pt-20">
                             <div className="md:w-1/4 w-full">
                                 <p className="text-3xl font-bold">4senc</p>
                                 <p className="mt-4">2021.11 - 2022.01</p>
@@ -244,6 +250,7 @@ const ResumePage = () => {
                             </div>
                         </div>
                     </div>
+                    <div className="pt-40" />
                     <h1 className="text-5xl font-bold mt-28 mb-14 md:ml-0 ml-1">
                         Skill<span className="text-sky-300">,</span>
                     </h1>
@@ -297,6 +304,7 @@ const ResumePage = () => {
                             </li>
                         </ul>
                     </ul>
+                    <div className="pt-52" />
                     <h1 className="text-5xl font-bold mt-28 mb-14 md:ml-0 ml-1">
                         Education<span className="text-sky-300">,</span>
                     </h1>
