@@ -88,15 +88,15 @@ const ResumePage = () => {
                             </li>
                         </ul>
                     </div>
-                    <div className="pt-20" />
+                    <div className="pt-36" />
                     <h1 className="text-5xl font-bold mt-28 mb-14 md:ml-0 ml-1">
                         Experience<span className="text-sky-300">,</span>
                     </h1>
                     <div className="divide-y md:ml-0 ml-3">
                         <div className="flex md:flex-row flex-col">
                             <div className="md:w-1/4 w-full">
-                                <p className="text-3xl font-bold">코리아센터</p>
-                                <p className="mt-4">2020.04 - 2022.</p>
+                                <p className="text-3xl font-bold">커넥트웨이브</p>
+                                <p className="mt-4">2020.04 - 2023.</p>
                                 <p className="leading-3 font-thin">Web Developer</p>
                             </div>
                             <div className="md:w-3/4 w-full">
@@ -110,10 +110,24 @@ const ResumePage = () => {
                                         1.51초에서 0.36초로 성능 개선
                                     </li>
                                     <li>
-                                        <p className="text-lg font-bold">EPP 모듈 통합</p>
-                                        <ul className="ml-5 list-square list-outside divide-y-4 divide-transparent">
-                                            <li></li>
-                                        </ul>
+                                        <div className="mt-2">
+                                            <p className="text-xl font-bold">EPP 통신 시스템 개편</p>
+                                            <p className="mt-2">2022.06 - 2022.12</p>
+                                            <div className="mt-2">
+                                                <ul className="ml-5 list-square list-outside divide-y-4 divide-transparent">
+                                                    <li>상위기관 통신 모듈 개편, 전체 시스템 재설계 및 개발</li>
+                                                    <li>23개의 분산 모듈에서 하나의 시스템으로 통합 구축</li>
+                                                    <li>확장 및 유지보수, 코드효율을 위한 객체지향 원칙 및 디자인 패턴을 적극 도입</li>
+                                                    <li>내부 소켓 통신 및 스레드 동기화 관리</li>
+                                                    <li>코드 베이스 개선 및 보일러 플레이트 코드 50% 이상 감소</li>
+                                                    <li>평균 응답속도 43.31%, 평균 초당 처리 개수 93% 향상</li>
+                                                    <li>기술 스택</li>
+                                                        <li className="ml-5">
+                                                            Java, Spring Boot, Spring Security, MySQL, JPA, Maven
+                                                        </li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </li>
                                 </ul>
                             </div>
@@ -126,8 +140,30 @@ const ResumePage = () => {
                     <div className="divide-y md:mx-0 mx-3">
                         <div className="flex md:flex-row flex-col mb-8">
                             <div className="md:w-1/4 w-full">
+                                <p className="text-3xl font-bold">마륜정</p>
+                                <p className="mt-4">2022.08 - 2023.</p>
+                                <p className="leading-3 font-thin">Main Developer</p>
+                            </div>
+                            <div className="md:w-3/4 w-full">
+                                <p className="h-9 pt-4 font-thin"></p>
+                                <ul className="mt-4 ml-5 list-square list-outside divide-y-4 divide-transparent">
+                                    <li>온라인 경마 예상지 쇼핑몰</li>
+                                    <li>백엔드 / 프론트엔드 개발 전담</li>
+                                    <li>한 기기에서 일정 시간만 조회 가능한 예상지 페이지 구현</li>
+                                    <li>마사회 정보 스크래핑 및 조회</li>
+                                    <li>매 주 갱신되는 경마 일정에 따른 자동 상품 갱신 시스템 구축</li>
+                                    <li>기술 스택</li>
+                                    <li className="ml-5">BackEnd</li>
+                                    <li className="ml-10">Java, Spring Boot, Spring Security, MySQL, JPA, Querydsl, AWS S3/CloudFront, EC2, SENS SMS</li>
+                                    <li className="ml-5">FrontEnd</li>
+                                    <li className="ml-10">TypeScript, Next.js, React-admin, Redux, SWR</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="flex md:flex-row flex-col mb-4 pt-8">
+                            <div className="md:w-1/4 w-full">
                                 <p className="text-3xl font-bold">개인 서버</p>
-                                <p className="mt-4">2020.08 - 2022.05</p>
+                                <p className="mt-4">2020.08 - 2023.</p>
                                 <p className="leading-3 font-thin">root</p>
                             </div>
                             <div className="md:w-3/4 w-full">
@@ -139,7 +175,7 @@ const ResumePage = () => {
                                         구성
                                     </li>
                                     <li className="ml-5">
-                                        Nginx, Node.js, php-fpm, Java/Spring, MySQL, MongoDB, Redis,
+                                        Nginx, Java/Spring, Node.js, php-fpm, MySQL, MongoDB, Redis,
                                         Jenkins, Certbot, Mail Server/Client 등의 컨테이너 구축 및
                                         운영 경험
                                     </li>
@@ -168,7 +204,7 @@ const ResumePage = () => {
                                 </ul>
                             </div>
                         </div>
-                        <div className="flex md:flex-row flex-col mb-8 pt-8">
+                        <div className="flex md:flex-row flex-col mb-8 pt-2">
                             <div className="md:w-1/4 w-full">
                                 <p className="text-3xl font-bold">블로그</p>
                                 <p className="mt-4">2022.01 - 2022.03</p>
@@ -183,16 +219,20 @@ const ResumePage = () => {
                                 <ul className="mt-4 ml-5 list-square list-outside divide-y-4 divide-transparent">
                                     <li>개인 블로그 개발 및 운영</li>
                                     <li>SEO 최적화 및 구글 검색엔진 등록</li>
-                                    <li>TypeScript 기반의 백엔드 / 프론트엔드 개발 전담</li>
+                                    <li>백엔드 / 프론트엔드 개발 전담</li>
                                     <li>기술 스택</li>
-                                    <li className="ml-5">
-                                        TypeScript, NestJS, Jest, MySQL, TypeORM, Next.js, Redux,
-                                        TOAST UI, reCAPTCHA, SWR, winston
+                                    <li className="ml-5">BackEnd</li>
+                                    <li className="ml-10">
+                                        TypeScript, NestJS, Jest, MySQL, TypeORM, winston
+                                    </li>
+                                    <li className="ml-5">FrontEnd</li>
+                                    <li className="ml-10">
+                                        TypeScript, Next.js, Redux, TOAST UI, reCAPTCHA, SWR, winston
                                     </li>
                                 </ul>
                             </div>
                         </div>
-                        <div className="flex md:flex-row flex-col mb-8 pt-20">
+                        <div className="flex md:flex-row flex-col mb-8 pt-8">
                             <div className="md:w-1/4 w-full">
                                 <p className="text-3xl font-bold">4senc</p>
                                 <p className="mt-4">2021.11 - 2022.01</p>
@@ -210,18 +250,21 @@ const ResumePage = () => {
                                         Schema 추가 코드가 필요없는 자동 추가 환경을 구축하여 작업
                                     </li>
                                     <li>
-                                        TypeScript 기반의 백엔드 / JavaScript 기반의 프론트엔드 개발
-                                        전담
+                                        백엔드 / 프론트엔드 개발 전담
                                     </li>
                                     <li>기술 스택</li>
-                                    <li className="ml-5">
-                                        TypeScript, Express.js, GraphQL, MySQL, winston, JavaScript,
-                                        Next.js, Apollo
+                                    <li className="ml-5">BackEnd</li>
+                                    <li className="ml-10">
+                                        TypeScript, Express.js, GraphQL, MySQL, winston
+                                    </li>
+                                    <li className="ml-5">FrontEnd</li>
+                                    <li className="ml-10">
+                                        JavaScript, Next.js, Apollo
                                     </li>
                                 </ul>
                             </div>
                         </div>
-                        <div className="flex md:flex-row flex-col mb-8 pt-8">
+                        <div className="flex md:flex-row flex-col mb-80 pt-72">
                             <div className="md:w-1/4 w-full">
                                 <p className="text-3xl font-bold">MollTalk</p>
                                 <p className="mt-4">2021.02 - 2021.04</p>
@@ -240,25 +283,30 @@ const ResumePage = () => {
                                         구현
                                     </li>
                                     <li>테스트를 통한 코드 안정성 향상</li>
-                                    <li>JavaScript 기반의 백엔드 / 프론트엔드 개발 전담</li>
+                                    <li>백엔드 / 개발 전담</li>
                                     <li>기술 스택</li>
-                                    <li className="ml-5">
-                                        JavaScript, Express.js, Jest, Mongoose, MongoDB, MySQL,
-                                        WebSocket, React, Recoil
+                                    <li className="ml-5">BackEnd</li>
+                                    <li className="ml-10">
+                                        JavaScript, Express.js, Jest, Mongoose, MongoDB, MySQL
+                                    </li>
+                                    <li className="ml-5">FrontEnd</li>
+                                    <li className="ml-10">
+                                        JavaScript, WebSocket, React, Recoil
                                     </li>
                                 </ul>
                             </div>
                         </div>
                     </div>
-                    <div className="pt-40" />
-                    <h1 className="text-5xl font-bold mt-28 mb-14 md:ml-0 ml-1">
+                    <div className="p-24"></div>
+                    <div className="pt-80" />
+                    <h1 className="text-5xl font-bold mt-80 mb-14 md:ml-0 ml-1">
                         Skill<span className="text-sky-300">,</span>
                     </h1>
                     <ul className="mt-4 md:ml-6 ml-8 list-square list-outside divide-y-8 divide-transparent">
                         <li className="text-2xl font-bold">Language</li>
                         <ul className="grid grid-cols-3 list-square list-outside md:ml-10 ml-5 mb-5">
-                            <li className="text-xl font-thin md:ml-10 ml-5 mt-2">TypeScript</li>
                             <li className="text-xl font-thin md:ml-10 ml-5 mt-2">Java</li>
+                            <li className="text-xl font-thin md:ml-10 ml-5 mt-2">TypeScript</li>
                             <li className="text-xl font-thin md:ml-10 ml-5 mt-2">PHP</li>
                             <li className="text-xl font-thin md:ml-10 ml-5 mt-2">
                                 Shell&nbsp;script
@@ -268,11 +316,13 @@ const ResumePage = () => {
                         <li className="text-2xl font-bold">Framework</li>
                         <li className="md:ml-10 ml-5 text-2xl">Back End</li>
                         <ul className="grid grid-cols-3 list-square list-outside md:ml-10 ml-5 mb-5">
+                            <li className="text-xl font-thin md:ml-10 ml-5 mt-2">Spring Boot</li>
+                            <li className="text-xl font-thin md:ml-10 ml-5 mt-2">JPA</li>
+                            <li className="text-xl font-thin md:ml-10 ml-5 mt-2">Querydsl</li>
                             <li className="text-xl font-thin md:ml-10 ml-5 mt-2 border-0">
                                 NestJS
                             </li>
                             <li className="text-xl font-thin md:ml-10 ml-5 mt-2">Express.js</li>
-                            <li className="text-xl font-thin md:ml-10 ml-5 mt-2">Spring Boot</li>
                             <li className="text-xl font-thin md:ml-10 ml-5 mt-2">TypeORM</li>
                             <li className="text-xl font-thin md:ml-10 ml-5 mt-2">CodeIgniter</li>
                         </ul>
@@ -289,6 +339,7 @@ const ResumePage = () => {
                         </ul>
                         <li className="text-2xl font-bold">Etc.</li>
                         <ul className="grid grid-cols-3 list-square list-outside md:ml-10 ml-5 mb-5">
+                            <li className="text-xl font-thin md:ml-10 ml-5 mt-2">AWS</li>
                             <li className="text-xl font-thin md:ml-10 ml-5 mt-2 border-0">
                                 Ubuntu
                             </li>
