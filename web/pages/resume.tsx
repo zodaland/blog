@@ -74,21 +74,11 @@ const ResumePage = () => {
                     <div className="mt-8 pl-2">
                         <ul className="ml-7 list-square list-outside divide-y-8 divide-transparent">
                             <li className="mt-5 ml-5 mr-2 md:text-2xl text-xl">
-                                서비스를 설계, 개발, 운영한 경험을 바탕으로 생산성과 안정성 있는
-                                구조에 대해 늘 고민하며 회사와 공동의 목표 달성을 최우선으로
-                                생각합니다.
-                            </li>
-                            <li className="ml-5 mr-2 md:text-2xl text-xl">
-                                앎과 이해가 커뮤니케이션의 핵심이라고 여기며 좋은 협업을 위해 테스트
-                                코드 작성과 더불어 다방면에 관심을 쏟고 있습니다.
-                            </li>
-                            <li className="ml-5 mr-2 md:text-2xl text-xl">
-                                도전을 통해 경험하고 학습하며 어떤 환경에서든 빠르게 적응하고
-                                능동적으로 일을 수행 할 수 있습니다.
+                                설계 / 개발 / 배포까지 경험한 프로젝트가 다수 있으며 특출난 야생성을 통해 유연하면서 견고한 상품을 만들려 노력하는 개발자 입니다.
                             </li>
                         </ul>
                     </div>
-                    <div className="pt-36" />
+                    {/*<div className="pt-72" />*/}
                     <h1 className="text-5xl font-bold mt-28 mb-14 md:ml-0 ml-1">
                         Experience<span className="text-sky-300">,</span>
                     </h1>
@@ -103,38 +93,31 @@ const ResumePage = () => {
                                 <p className="h-9 pt-4 font-thin">연 매출 3400억의 중견 IT기업</p>
                                 <ul className="mt-4 ml-5 list-square list-outside divide-y-4 divide-transparent">
                                     <li>PHP기반의 웹 서비스와 JAVA 기반의 백엔드 도메인 통신 시스템 개발 전담</li>
-                                    <li>상위 기관, 사내 시스템 간의 도메인 및 정산 동기화 스케줄러 개발</li>
-                                    <li>BIND/named 프로그램 설정 자동화 구현을 통한 DNS API 개발</li>
-                                    <li>
-                                        MySQL 성능 튜닝을 통한 정산 시스템 로딩 시간 평균
-                                        1.51초에서 0.36초로 성능 개선
-                                    </li>
-                                    <li>
-                                        <div className="mt-2">
-                                            <p className="text-xl font-bold">EPP 통신 시스템 개편</p>
-                                            <p className="mt-2">2022.06 - 2022.12</p>
-                                            <div className="mt-2">
-                                                <ul className="ml-5 list-square list-outside divide-y-4 divide-transparent">
-                                                    <li>상위기관 통신 모듈 개편, 전체 시스템 재설계 및 개발</li>
-                                                    <li>23개의 분산 모듈에서 하나의 시스템으로 통합 구축</li>
-                                                    <li>확장 및 유지보수, 코드효율을 위한 객체지향 원칙 및 디자인 패턴을 적극 도입</li>
-                                                    <li>내부 소켓 통신 및 스레드 동기화 관리</li>
-                                                    <li>코드 베이스 개선 및 보일러 플레이트 코드 50% 이상 감소</li>
-                                                    <li>평균 응답속도 43.31%, 평균 초당 처리 개수 93% 향상</li>
-                                                    <li>기술 스택</li>
-                                                        <li className="ml-5">
-                                                            Java, Spring Boot, Spring Security, MySQL, JPA, Maven
-                                                        </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </li>
                                 </ul>
+                                <div className="mt-8">
+                                    <p className="text-2xl font-bold">EPP 통신 시스템 개편</p>
+                                    <p className="mt-2">2022.06 - 2022.12</p>
+                                    <div className="mt-2">
+                                        <ul className="ml-5 list-square list-outside divide-y-4 divide-transparent">
+                                            <li>레거시 통신 모듈 개편, 23개의 분산 모듈 재설계 및 개발로 하나의 시스템으로 통합 구축</li>
+                                            <li>SDK 마다 다른 명령어를 하나의 시스템에서 처리하기 위한 커맨드 패턴, XML 확장성 공급을 위한 전략 패턴 도입</li>
+                                            <li>3개의 확장성 공급 XML 소켓 통신 SDK와 11개의 서버, 최대 24개의 커맨드 처리를 위한 파사드 패턴 도입으로 가독성, 확장성, 유지보수성 확보 및 보일러 플레이트 코드 대폭 감소</li>
+                                            <li>명시적락(Reentrant Lock)을 이용한 세션 풀 구현 및 스레드 동기화 관리</li>
+                                            <li>평균 응답속도 43.31%, 평균 초당 처리 개수 93% 향상</li>
+                                            <li>난해했던 구현의 기존 TCP 소켓 통신 모듈을 간단한 REST API로 재설 후 API 명세서 작성</li>
+                                            <li>리셀러 활성화를 위해 Spring Security를 도입, 내부 통신에서 IP 화이트 리스트, 역할, Basic Authentication 기반의 외부 통신으로 변경</li>
+                                            <li>기술 스택</li>
+                                                <li className="ml-5">
+                                                    Java, Spring Boot, Spring Security, MySQL, JPA, Maven
+                                                </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                       <div className="pt-80" />
-                    <h1 className="text-5xl font-bold mt-96 mb-14 md:ml-0 ml-1">
+                    {/*<div className="pt-80" />*/}
+                    <h1 className="text-5xl font-bold mt-28 mb-14 md:ml-0 ml-1">
                         Project<span className="text-sky-300">,</span>
                     </h1>
                     <div className="divide-y md:mx-0 mx-3">
@@ -147,11 +130,10 @@ const ResumePage = () => {
                             <div className="md:w-3/4 w-full">
                                 <p className="h-9 pt-4 font-thin"></p>
                                 <ul className="mt-4 ml-5 list-square list-outside divide-y-4 divide-transparent">
-                                    <li>온라인 경마 예상지 쇼핑몰</li>
+                                    <li>유료 웹페이지 기반 상품 판매 쇼핑몰</li>
                                     <li>백엔드 / 프론트엔드 개발 전담</li>
-                                    <li>한 기기에서 일정 시간만 조회 가능한 예상지 페이지 구현</li>
-                                    <li>마사회 정보 스크래핑 및 조회</li>
-                                    <li>매 주 갱신되는 경마 일정에 따른 자동 상품 갱신 시스템 구축</li>
+                                    <li>URL path 인증번호를 통한 일회성 접근과 IAM, S3를 통한 이미지와 1:1 매핑되는 pre-signed URL을 이용해 유료 웹페이지 상품 구현</li>
+                                    <li>스크래핑을 통해 매 주 갱신되는 일정 정보에 따른 자동 상품 갱신 시스템 구축</li>
                                     <li>기술 스택</li>
                                     <li className="ml-5">BackEnd</li>
                                     <li className="ml-10">Java, Spring Boot, Spring Security, MySQL, JPA, Querydsl, AWS S3/CloudFront, EC2, SENS SMS</li>
@@ -204,7 +186,7 @@ const ResumePage = () => {
                                 </ul>
                             </div>
                         </div>
-                        <div className="flex md:flex-row flex-col mb-8 pt-2">
+                        <div className="flex md:flex-row flex-col mb-8 pt-8">
                             <div className="md:w-1/4 w-full">
                                 <p className="text-3xl font-bold">블로그</p>
                                 <p className="mt-4">2022.01 - 2022.03</p>
@@ -217,9 +199,11 @@ const ResumePage = () => {
                                     </a>
                                 </p>
                                 <ul className="mt-4 ml-5 list-square list-outside divide-y-4 divide-transparent">
-                                    <li>개인 블로그 개발 및 운영</li>
-                                    <li>SEO 최적화 및 구글 검색엔진 등록</li>
+                                    <li>마크다운 기반의 게시글 작성, 커스텀 된 마크다운 게시물로 보여지는 개발 기록 블로그</li>
                                     <li>백엔드 / 프론트엔드 개발 전담</li>
+                                    <li>카테고리, 태그의 추가 / 수정이 용이한 블로그 페이지 구현</li>
+                                    <li>개인 메일서버를 연동한 컨택트 페이지와 OTP + 패스워드 보안의 관리자 페이지 구현</li>
+                                    <li>SEO 최적화 및 구글 검색엔진 등록, 2023년 1월 기준 MAU 1670명</li>
                                     <li>기술 스택</li>
                                     <li className="ml-5">BackEnd</li>
                                     <li className="ml-10">
@@ -264,7 +248,7 @@ const ResumePage = () => {
                                 </ul>
                             </div>
                         </div>
-                        <div className="flex md:flex-row flex-col mb-80 pt-72">
+                        <div className="flex md:flex-row flex-col mb-8 pt-8">
                             <div className="md:w-1/4 w-full">
                                 <p className="text-3xl font-bold">MollTalk</p>
                                 <p className="mt-4">2021.02 - 2021.04</p>
@@ -297,9 +281,11 @@ const ResumePage = () => {
                             </div>
                         </div>
                     </div>
+                    {/*
                     <div className="p-24"></div>
                     <div className="pt-80" />
-                    <h1 className="text-5xl font-bold mt-80 mb-14 md:ml-0 ml-1">
+                    */}
+                    <h1 className="text-5xl font-bold mt-28 mb-14 md:ml-0 ml-1">
                         Skill<span className="text-sky-300">,</span>
                     </h1>
                     <ul className="mt-4 md:ml-6 ml-8 list-square list-outside divide-y-8 divide-transparent">
@@ -346,16 +332,16 @@ const ResumePage = () => {
                             <li className="text-xl font-thin md:ml-10 ml-5 mt-2">Jenkins</li>
                             <li className="text-xl font-thin md:ml-10 ml-5 mt-2">DNS</li>
                             <li className="text-xl font-thin md:ml-10 ml-5 mt-2">Docker</li>
+                            <li className="text-xl font-thin md:ml-10 ml-5 mt-2">Nginx</li>
                             <li className="md:col-span-1 col-span-2 text-xl font-thin md:ml-10 ml-5 mt-2">
                                 Docker compose
                             </li>
-                            <li className="text-xl font-thin md:ml-10 ml-5 mt-2">Nginx</li>
                             <li className="md:col-span-1 col-span-2 text-xl font-thin md:ml-10 ml-5 mt-2">
                                 Websocket/Socket.io
                             </li>
                         </ul>
                     </ul>
-                    <div className="pt-52" />
+                    {/*<div className="pt-52" />*/}
                     <h1 className="text-5xl font-bold mt-28 mb-14 md:ml-0 ml-1">
                         Education<span className="text-sky-300">,</span>
                     </h1>
