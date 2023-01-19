@@ -74,8 +74,8 @@ const ResumePage = () => {
                     <div className="mt-8 pl-2">
                         <ul className="ml-7 list-square list-outside divide-y-8 divide-transparent">
                             <li className="mt-5 ml-5 mr-2 md:text-2xl text-xl">
-                                설계 / 개발 / 배포까지 경험한 프로젝트가 다수 있으며 특출난 야생성을
-                                통해 유연하면서 견고한 상품을 만들려 노력하는 개발자 입니다.
+                                설계부터 배포까지 경험한 프로젝트가 다수 있으며 문제해결력을 키우며
+                                유연하면서 견고한 상품을 만들려 노력하는 개발자 입니다.
                             </li>
                         </ul>
                     </div>
@@ -109,9 +109,8 @@ const ResumePage = () => {
                                             </li>
                                             <li>
                                                 3개의 확장성 공급 XML 소켓 통신 SDK와 11개의 서버,
-                                                최대 24개의 커맨드 처리를 위한 파사드 패턴 도입으로
-                                                가독성, 확장성, 유지보수성 확보 및 보일러 플레이트
-                                                코드 대폭 감소
+                                                최대 24개의 커맨드 처리를 위한 파사드 패턴 도입 및
+                                                보일러 플레이트 코드 대폭 감소
                                             </li>
                                             <li>
                                                 SDK 마다 다른 명령어를 하나의 시스템에서 처리하기
@@ -119,8 +118,8 @@ const ResumePage = () => {
                                                 도입
                                             </li>
                                             <li>
-                                                명시적락(Reentrant Lock)을 이용한 세션 풀 구현 및
-                                                스레드 동기화 관리
+                                                BlockingQueue를 이용한 세션 풀 구현 및 스레드 동기화
+                                                관리
                                             </li>
                                             <li>
                                                 평균 응답속도 43.31%, 평균 초당 처리 개수 93% 향상
@@ -159,7 +158,7 @@ const ResumePage = () => {
                             <div className="md:w-3/4 w-full">
                                 <p className="h-9 pt-4 font-thin"></p>
                                 <ul className="mt-4 ml-5 list-square list-outside divide-y-4 divide-transparent">
-                                    <li>유료 웹페이지 기반 상품 판매 쇼핑몰</li>
+                                    <li>유료 웹페이지 상품 판매 쇼핑몰</li>
                                     <li>백엔드 / 프론트엔드 개발 전담</li>
                                     <li>
                                         URL path 인증번호를 통한 일회성 접근 URL과 IAM, S3를 통한
