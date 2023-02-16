@@ -74,8 +74,27 @@ const ResumePage = () => {
                     <div className="mt-8 pl-2">
                         <ul className="ml-7 list-square list-outside divide-y-8 divide-transparent">
                             <li className="mt-5 ml-5 mr-2 md:text-2xl text-xl">
-                                설계부터 배포까지 경험한 프로젝트가 다수 있으며 문제해결력을 키우며
-                                유연하면서 견고한 상품을 만들려 노력하는 개발자 입니다.
+                                3년차 개발자로서 도메인 시스템을 개발, 배포 및 운영하는 역할을
+                                수행해 왔습니다.
+                            </li>
+                            <li className="mt-5 ml-5 mr-2 md:text-2xl text-xl">
+                                새로운 기술과 경험에 대한 열망으로 서버 관리와 다양한 사이드
+                                프로젝트를 진행하여 전체적인 프로젝트 생명주기 및 비즈니스 모델
+                                성장에 대한 이해력을 확보했습니다.
+                            </li>
+                            <li className="mt-5 ml-5 mr-2 md:text-2xl text-xl">
+                                다양한 프로젝트 설계/개발을 통해 축적한 경험을 바탕으로, 최근에는
+                                사내 핵심 통신 모듈 개편 프로젝트의 설계/개발/배포를 전담하였고 이를
+                                통해 평균 처리 속도를 약 93% 개선하였습니다.
+                            </li>
+                            <li className="mt-5 ml-5 mr-2 md:text-2xl text-xl">
+                                어떠한 환경에서든 빠르게 적응하며 능동적으로 업무를 수행할 수
+                                있습니다. 또한, 좋은 협업자가 되기 위해 소통에 관심을 가지고
+                                노력합니다.
+                            </li>
+                            <li className="mt-5 ml-5 mr-2 md:text-2xl text-xl">
+                                이러한 역량과 노력으로, 제가 맡은 업무를 성공적으로 수행하고
+                                동료들과 함께 협력하여 효율적으로 일할 수 있습니다.
                             </li>
                         </ul>
                     </div>
@@ -97,6 +116,7 @@ const ResumePage = () => {
                                         PHP기반의 웹 서비스와 JAVA 기반의 백엔드 도메인 통신 시스템
                                         개발 전담
                                     </li>
+                                    <li>Index와 쿼리 튜닝을 통한 slow query 개선 경험</li>
                                 </ul>
                                 <div className="mt-8">
                                     <p className="text-2xl font-bold">EPP 통신 시스템 개편</p>
@@ -141,12 +161,33 @@ const ResumePage = () => {
                                         </ul>
                                     </div>
                                 </div>
+                                <div className="mt-8">
+                                    <p className="text-2xl font-bold">DNS 자동화</p>
+                                    <p className="mt-2">2022.01 - 2022.06</p>
+                                    <div className="mt-2">
+                                        <ul className="ml-5 list-square list-outside divide-y-4 divide-transparent">
+                                            <li>
+                                                수동 DNS 기능 전체 호환을 위한 DB 및 구조 설계 및
+                                                개발
+                                            </li>
+                                            <li>
+                                                서비스 전반에 분산되어 있던 함수 기반의 기능을
+                                                클래스 기반으로 작성
+                                            </li>
+                                            <li>사용자, 관리자 화면 작성</li>
+                                            <li>
+                                                시스템 통합 및 자동화로 운영팀 및 개발팀 업무 효율성
+                                                상승
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                     {/*<div className="pt-80" />*/}
                     <h1 className="text-5xl font-bold mt-28 mb-14 md:ml-0 ml-1">
-                        Project<span className="text-sky-300">,</span>
+                        Side Projects<span className="text-sky-300">,</span>
                     </h1>
                     <div className="divide-y md:mx-0 mx-3">
                         <div className="flex md:flex-row flex-col mb-8">
