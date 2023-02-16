@@ -74,23 +74,24 @@ const ResumePage = () => {
                     <div className="mt-8 pl-2">
                         <ul className="ml-7 list-square list-outside divide-y-8 divide-transparent">
                             <li className="mt-5 ml-5 mr-2 md:text-2xl text-xl">
-                                3년차 개발자로서 도메인 시스템을 개발, 배포 및 운영하는 역할을
-                                수행해 왔습니다.
+                                3년차 개발자로서 <span className="hl">도메인 시스템</span>을 개발,
+                                배포 및 운영하는 역할을 수행해 왔습니다.
                             </li>
                             <li className="mt-5 ml-5 mr-2 md:text-2xl text-xl">
                                 새로운 기술과 경험에 대한 열망으로 서버 관리와 다양한 사이드
                                 프로젝트를 진행하여 전체적인 프로젝트 생명주기 및 비즈니스 모델
-                                성장에 대한 이해력을 확보했습니다.
+                                성장에 대한 이해력을 길렀습니다.
                             </li>
                             <li className="mt-5 ml-5 mr-2 md:text-2xl text-xl">
-                                다양한 프로젝트 설계/개발을 통해 축적한 경험을 바탕으로, 최근에는
-                                사내 핵심 통신 모듈 개편 프로젝트의 설계/개발/배포를 전담하였고 이를
-                                통해 평균 처리 속도를 약 93% 개선하였습니다.
+                                다양한 프로젝트 설계/개발을 통해 축적한 경험을 바탕으로, 최근에는{' '}
+                                <span className="hl">통신 모듈 개편 프로젝트</span>의
+                                설계/개발/배포를 전담하였고 이를 통해 평균 처리 속도를 약{' '}
+                                <span className="hl">93%</span> 개선하였습니다.
                             </li>
                             <li className="mt-5 ml-5 mr-2 md:text-2xl text-xl">
                                 어떠한 환경에서든 빠르게 적응하며 능동적으로 업무를 수행할 수
-                                있습니다. 또한, 좋은 협업자가 되기 위해 소통에 관심을 가지고
-                                노력합니다.
+                                있습니다. 또한, <span className="hl">좋은 동료</span>가 되기 위해
+                                소통에 관심을 가지고 노력합니다.
                             </li>
                             <li className="mt-5 ml-5 mr-2 md:text-2xl text-xl">
                                 이러한 역량과 노력으로, 제가 맡은 업무를 성공적으로 수행하고
