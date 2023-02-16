@@ -125,4 +125,11 @@
     input::-webkit-calendar-picker-indicator {
         opacity: 0;
     }
+
+	.hl {
+	  background-color: rgb(224 242 254);
+	  padding: 0rem .3rem;
+	  color: rgb(12 74 110);
+	  border-radius: .2rem
+	}
 }
