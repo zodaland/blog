@@ -75,12 +75,12 @@ const ResumePage = () => {
                         <ul className="ml-7 list-square list-outside divide-y-8 divide-transparent">
                             <li className="mt-5 ml-5 mr-2 md:text-2xl text-xl">
                                 3년차 개발자로서 <span className="hl">도메인 시스템</span>을 개발,
-                                배포 및 운영하는 역할을 수행해 왔습니다.
+                                배포 및 운영했습니다.
                             </li>
                             <li className="mt-5 ml-5 mr-2 md:text-2xl text-xl">
-                                새로운 기술과 경험에 대한 열망으로 서버 관리와 다양한 사이드
-                                프로젝트를 진행하여 전체적인 프로젝트 생명주기 및 비즈니스 모델
-                                성장에 대한 이해력을 길렀습니다.
+                                새로운 기술과 경험에 대한 열망으로 서버 관리부터 다양한 사이드
+                                프로젝트, 배포를 진행하여 전체적인 프로젝트 생명주기 및 비즈니스
+                                모델 성장에 대한 이해력을 길렀습니다.
                             </li>
                             <li className="mt-5 ml-5 mr-2 md:text-2xl text-xl">
                                 다양한 프로젝트 설계/개발을 통해 축적한 경험을 바탕으로, 최근에는{' '}
@@ -121,7 +121,7 @@ const ResumePage = () => {
                                 </ul>
                                 <div className="mt-8">
                                     <p className="text-2xl font-bold">EPP 통신 시스템 개편</p>
-                                    <p className="mt-2">2022.06 - 2022.12</p>
+                                    <p className="mt-2">2022.06 - 2023.03</p>
                                     <div className="mt-2">
                                         <ul className="ml-5 list-square list-outside divide-y-4 divide-transparent">
                                             <li>
@@ -129,9 +129,9 @@ const ResumePage = () => {
                                                 개발로 하나의 시스템으로 통합 구축
                                             </li>
                                             <li>
-                                                3개의 확장성 공급 XML 소켓 통신 SDK와 11개의 서버,
-                                                최대 24개의 커맨드 처리를 위한 파사드 패턴 도입 및
-                                                보일러 플레이트 코드 대폭 감소
+                                                3개의 SDK와 11개의 요청 서버, 최대 24개의 커맨드
+                                                처리를 위한 파사드 패턴 도입으로 보일러 플레이트
+                                                코드 대폭 감소
                                             </li>
                                             <li>
                                                 SDK 마다 다른 명령어를 하나의 시스템에서 처리하기
@@ -143,16 +143,16 @@ const ResumePage = () => {
                                                 관리
                                             </li>
                                             <li>
-                                                평균 응답속도 43.31%, 평균 초당 처리 개수 93% 향상
-                                            </li>
-                                            <li>
-                                                난해했던 구현의 기존 TCP 소켓 통신 모듈을 간단한
-                                                REST API로 변경, API 명세서 작성
+                                                TCP 소켓 통신 모듈에서 간단한 REST API로 변경, API
+                                                명세서 작성
                                             </li>
                                             <li>
                                                 리셀러 활성화를 위해 Spring Security를 도입, 내부
                                                 통신에서 IP 화이트 리스트, 역할, Basic
                                                 Authentication 기반의 외부 통신 API로 변경
+                                            </li>
+                                            <li>
+                                                평균 응답속도 43.31%, 평균 초당 처리 개수 93% 향상
                                             </li>
                                             <li>기술 스택</li>
                                             <li className="ml-5">
@@ -203,9 +203,8 @@ const ResumePage = () => {
                                     <li>유료 웹페이지 상품 판매 쇼핑몰</li>
                                     <li>백엔드 / 프론트엔드 개발 전담</li>
                                     <li>
-                                        URL path 인증번호를 통한 일회성 접근 URL과 IAM, S3를 통한
-                                        이미지와 1:1 매핑되는 pre-signed URL을 이용해 유료 웹페이지
-                                        상품 구현
+                                        개별 인증을 통한 일회성 접근 URL과 IAM, S3를 통한 이미지와
+                                        1:1 매핑되는 pre-signed URL을 이용해 유료 웹 잡지 상품 구현
                                     </li>
                                     <li>
                                         스크래핑을 통해 매 주 갱신되는 일정 정보에 따른 자동 상품
@@ -247,17 +246,16 @@ const ResumePage = () => {
                                         Docker Compose를 사용한 다중 컨테이너 관리
                                     </li>
                                     <li>
-                                        서버, WAS, 서비스 환경 3단계의 로그 관리와 메일 발송 및 알람
-                                        처리를 통한 이슈 관리
+                                        서버, WAS, 서비스 각각의 로그 관리와 자동 알람 처리를 통한
+                                        이슈 관리
                                     </li>
                                     <li>
-                                        실제 공격(SSH Brute force Attack, kdevtmpfsi, SYN
-                                        Flooding)을 바탕으로 기른 보안 개념
+                                        실제 공격(SSH Brute force Attack, kdevtmpfsi, SYN Flooding
+                                        등)을 받은 경험을 바탕으로 기른 보안 개념
                                     </li>
-                                    <li className="ml-5">iptables 관리</li>
-                                    <li className="ml-5">Nmap 스캔을 이용한 보안 강화</li>
+                                    <li className="ml-5">방화벽 관리, Nmap을 이용한 보안 강화</li>
                                     <li className="ml-5">
-                                        Jenkins를 이용한 서버 OTP 로그인 인증 환경 구성
+                                        Jenkins와 Web hook 이용한 서버 OTP 로그인 인증 환경 구성
                                     </li>
                                     <li>
                                         Jenkins, ShellScript를 사용한 Let's Encrypt 와일드카드
@@ -294,7 +292,8 @@ const ResumePage = () => {
                                         관리자 페이지 구현
                                     </li>
                                     <li>
-                                        SEO 최적화 및 구글 검색엔진 등록, 2023년 1월 기준 MAU 1670명
+                                        SEO 최적화 및 구글 검색엔진 등록, 2023년 2월 기준 MAU
+                                        1,855명
                                     </li>
                                     <li>기술 스택</li>
                                     <li className="ml-5">BackEnd</li>
@@ -437,7 +436,7 @@ const ResumePage = () => {
                             <div className="md:w-1/4 w-full">
                                 <p className="text-3xl font-bold">인덕대학교</p>
                                 <p className="mt-4">2013.03 - 2020.02</p>
-                                <p className="leading-3 font-thin">Graduate</p>
+                                <p className="leading-3 font-thin">Graduation</p>
                             </div>
                             <div className="md:w-3/4 w-full">
                                 <p className="h-9 pt-4 font-thin">컴퓨터소프트웨어학과</p>
@@ -451,6 +450,16 @@ const ResumePage = () => {
                                         현장 일을 병행하다보니 졸업이 다소 늦어졌습니다.
                                     </li>
                                 </ul>
+                            </div>
+                        </div>
+                        <div className="flex md:flex-row flex-col mb-8 pt-8">
+                            <div className="md:w-1/4 w-full">
+                                <p className="text-3xl font-bold">학점은행</p>
+                                <p className="mt-4">2021.01 - 2022.12</p>
+                                <p className="leading-3 font-thin">Graduation</p>
+                            </div>
+                            <div className="md:w-3/4 w-full">
+                                <p className="h-9 pt-4 font-thin">컴퓨터공학</p>
                             </div>
                         </div>
                     </div>
