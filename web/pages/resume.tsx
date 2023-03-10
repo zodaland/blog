@@ -78,24 +78,18 @@ const ResumePage = () => {
                                 배포 및 운영했습니다.
                             </li>
                             <li className="mt-5 ml-5 mr-2 md:text-2xl text-xl">
-                                새로운 기술과 경험에 대한 열망으로 서버 관리부터 다양한 사이드
-                                프로젝트, 배포를 진행하여 전체적인 프로젝트 생명주기 및 비즈니스
-                                모델 성장에 대한 이해력을 길렀습니다.
+                                서버 관리부터 다양한 프로젝트, 배포를 진행하여 전체적인 프로젝트
+                                생명주기 및 비즈니스 모델 성장에 대한 이해력을 길렀습니다.
                             </li>
                             <li className="mt-5 ml-5 mr-2 md:text-2xl text-xl">
-                                다양한 프로젝트 설계/개발을 통해 축적한 경험을 바탕으로, 최근에는{' '}
-                                <span className="hl">통신 모듈 개편 프로젝트</span>의
-                                설계/개발/배포를 전담하였고 이를 통해 평균 처리 속도를 약{' '}
+                                최근에는 <span className="hl">코어 통신 시스템 개편 프로젝트</span>
+                                의 설계/개발/배포를 전담하였고 평균 처리 속도를 약{' '}
                                 <span className="hl">93%</span> 개선하였습니다.
                             </li>
                             <li className="mt-5 ml-5 mr-2 md:text-2xl text-xl">
                                 어떠한 환경에서든 빠르게 적응하며 능동적으로 업무를 수행할 수
                                 있습니다. 또한, <span className="hl">좋은 동료</span>가 되기 위해
                                 소통에 관심을 가지고 노력합니다.
-                            </li>
-                            <li className="mt-5 ml-5 mr-2 md:text-2xl text-xl">
-                                이러한 역량과 노력으로, 제가 맡은 업무를 성공적으로 수행하고
-                                동료들과 함께 협력하여 효율적으로 일할 수 있습니다.
                             </li>
                         </ul>
                     </div>
@@ -114,19 +108,21 @@ const ResumePage = () => {
                                 <p className="h-9 pt-4 font-thin">연 매출 3400억의 중견 IT기업</p>
                                 <ul className="mt-4 ml-5 list-square list-outside divide-y-4 divide-transparent">
                                     <li>
-                                        PHP기반의 웹 서비스와 JAVA 기반의 백엔드 도메인 통신 시스템
+                                        JAVA 기반의 백엔드 도메인 통신 시스템과 PHP기반의 웹 서비스
                                         개발 전담
                                     </li>
                                     <li>Index와 쿼리 튜닝을 통한 slow query 개선 경험</li>
                                 </ul>
                                 <div className="mt-8">
-                                    <p className="text-2xl font-bold">EPP 통신 시스템 개편</p>
+                                    <p className="text-2xl font-bold">
+                                        도메인 코어 통신 시스템 개편
+                                    </p>
                                     <p className="mt-2">2022.06 - 2023.03</p>
                                     <div className="mt-2">
                                         <ul className="ml-5 list-square list-outside divide-y-4 divide-transparent">
                                             <li>
-                                                레거시 통신 모듈 개편, 23개의 분산 모듈 재설계 및
-                                                개발로 하나의 시스템으로 통합 구축
+                                                23개의 레거시 분산 모듈을 하나의 시스템으로 재설계
+                                                및 개발 전담
                                             </li>
                                             <li>
                                                 3개의 SDK와 11개의 요청 서버, 최대 24개의 커맨드
@@ -193,38 +189,6 @@ const ResumePage = () => {
                     <div className="divide-y md:mx-0 mx-3">
                         <div className="flex md:flex-row flex-col mb-8">
                             <div className="md:w-1/4 w-full">
-                                <p className="text-3xl font-bold">마륜정</p>
-                                <p className="mt-4">2022.08 - 2023.</p>
-                                <p className="leading-3 font-thin">Main Developer</p>
-                            </div>
-                            <div className="md:w-3/4 w-full">
-                                <p className="h-9 pt-4 font-thin"></p>
-                                <ul className="mt-4 ml-5 list-square list-outside divide-y-4 divide-transparent">
-                                    <li>유료 웹페이지 상품 판매 쇼핑몰</li>
-                                    <li>백엔드 / 프론트엔드 개발 전담</li>
-                                    <li>
-                                        개별 인증을 통한 일회성 접근 URL과 IAM, S3를 통한 이미지와
-                                        1:1 매핑되는 pre-signed URL을 이용해 유료 웹 잡지 상품 구현
-                                    </li>
-                                    <li>
-                                        스크래핑을 통해 매 주 갱신되는 일정 정보에 따른 자동 상품
-                                        갱신 시스템 구축
-                                    </li>
-                                    <li>기술 스택</li>
-                                    <li className="ml-5">BackEnd</li>
-                                    <li className="ml-10">
-                                        Java, Spring Boot, Spring Security, MySQL, JPA, Querydsl,
-                                        AWS S3/CloudFront, EC2, SENS SMS
-                                    </li>
-                                    <li className="ml-5">FrontEnd</li>
-                                    <li className="ml-10">
-                                        TypeScript, Next.js, React-admin, Redux, SWR
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className="flex md:flex-row flex-col mb-4 pt-8">
-                            <div className="md:w-1/4 w-full">
                                 <p className="text-3xl font-bold">개인 서버</p>
                                 <p className="mt-4">2020.08 - 2023.</p>
                                 <p className="leading-3 font-thin">root</p>
@@ -255,7 +219,7 @@ const ResumePage = () => {
                                     </li>
                                     <li className="ml-5">방화벽 관리, Nmap을 이용한 보안 강화</li>
                                     <li className="ml-5">
-                                        Jenkins와 Web hook 이용한 서버 OTP 로그인 인증 환경 구성
+                                        Jenkins와 Webhook 이용한 서버 OTP 로그인 인증 환경 구성
                                     </li>
                                     <li>
                                         Jenkins, ShellScript를 사용한 Let's Encrypt 와일드카드
@@ -263,6 +227,38 @@ const ResumePage = () => {
                                     </li>
                                     <li>Github Action, Jenkins를 통한 CI/CD 구성</li>
                                     <li>자체 DNS / 네임서버 구성 및 운영</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="flex md:flex-row flex-col mb-4 pt-8">
+                            <div className="md:w-1/4 w-full">
+                                <p className="text-3xl font-bold">마륜정</p>
+                                <p className="mt-4">2022.08 - 2023.</p>
+                                <p className="leading-3 font-thin">Main Developer</p>
+                            </div>
+                            <div className="md:w-3/4 w-full">
+                                <p className="h-9 pt-4 font-thin"></p>
+                                <ul className="mt-4 ml-5 list-square list-outside divide-y-4 divide-transparent">
+                                    <li>온라인 잡지 상품 판매 쇼핑몰</li>
+                                    <li>백엔드 / 프론트엔드 개발 전담</li>
+                                    <li>
+                                        개별 인증을 통한 일회성 접근 URL과 IAM, S3를 통한 이미지와
+                                        1:1 매핑되는 pre-signed URL을 이용해 웹 잡지 상품 구현
+                                    </li>
+                                    <li>
+                                        스크래핑을 통해 매 주 갱신되는 일정 정보에 따른 자동 상품
+                                        갱신 시스템 구축
+                                    </li>
+                                    <li>기술 스택</li>
+                                    <li className="ml-5">BackEnd</li>
+                                    <li className="ml-10">
+                                        Java, Spring Boot, Spring Security, MySQL, JPA, Querydsl,
+                                        AWS S3/CloudFront, EC2, SENS SMS
+                                    </li>
+                                    <li className="ml-5">FrontEnd</li>
+                                    <li className="ml-10">
+                                        TypeScript, Next.js, React-admin, Redux, SWR
+                                    </li>
                                 </ul>
                             </div>
                         </div>
