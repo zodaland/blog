@@ -88,8 +88,8 @@ const ResumePage = () => {
                             </li>
                             <li className="mt-5 ml-5 mr-2 md:text-2xl text-xl">
                                 어떠한 환경에서든 빠르게 적응하며 능동적으로 업무를 수행할 수
-                                있습니다. 또한, <span className="hl">좋은 동료</span>가 되기 위해
-                                소통에 관심을 가지고 노력합니다.
+                                있습니다. 또한, 좋은 동료가 되기 위해 소통에 관심을 가지고
+                                노력합니다.
                             </li>
                         </ul>
                     </div>
@@ -108,10 +108,15 @@ const ResumePage = () => {
                                 <p className="h-9 pt-4 font-thin">연 매출 3400억의 중견 IT기업</p>
                                 <ul className="mt-4 ml-5 list-square list-outside divide-y-4 divide-transparent">
                                     <li>
-                                        JAVA 기반의 백엔드 도메인 통신 시스템과 PHP기반의 웹 서비스
+                                        <span className="hl">JAVA</span> 기반의 백엔드 도메인 통신
+                                        시스템과 <span className="hl">PHP</span>기반의 웹 서비스
                                         개발 전담
                                     </li>
                                     <li>Index와 쿼리 튜닝을 통한 slow query 개선 경험</li>
+                                    <li className="ml-5">
+                                        평균 로딩 속도 <span className="hl">1.51초</span> →{' '}
+                                        <span className="hl">0.35초</span>
+                                    </li>
                                 </ul>
                                 <div className="mt-8">
                                     <p className="text-2xl font-bold">
@@ -121,8 +126,8 @@ const ResumePage = () => {
                                     <div className="mt-2">
                                         <ul className="ml-5 list-square list-outside divide-y-4 divide-transparent">
                                             <li>
-                                                23개의 레거시 분산 모듈을 하나의 시스템으로 재설계
-                                                및 개발 전담
+                                                23개의 레거시 분산 모듈을 하나의 시스템으로
+                                                <span className="hl">재설계 및 개발 전담</span>
                                             </li>
                                             <li>
                                                 3개의 SDK와 11개의 요청 서버, 최대 24개의 커맨드
@@ -135,11 +140,13 @@ const ResumePage = () => {
                                                 도입
                                             </li>
                                             <li>
-                                                BlockingQueue를 이용한 세션 풀 구현 및 스레드 동기화
-                                                관리
+                                                BlockingQueue를 이용한{' '}
+                                                <span className="hl">세션 풀</span> 및{' '}
+                                                <span className="hl">스레드 동기화</span>
+                                                구현
                                             </li>
                                             <li>
-                                                TCP 소켓 통신 모듈에서 간단한 REST API로 변경, API
+                                                TCP 소켓 통신 모듈에서 간단한 REST로 변경, API
                                                 명세서 작성
                                             </li>
                                             <li>
@@ -148,7 +155,9 @@ const ResumePage = () => {
                                                 Authentication 기반의 외부 통신 API로 변경
                                             </li>
                                             <li>
-                                                평균 응답속도 43.31%, 평균 초당 처리 개수 93% 향상
+                                                평균 응답속도 <span className="hl">43.31%</span>,
+                                                평균 초당 처리 개수 <span className="hl">93%</span>{' '}
+                                                향상
                                             </li>
                                             <li>기술 스택</li>
                                             <li className="ml-5">
@@ -164,12 +173,12 @@ const ResumePage = () => {
                                     <div className="mt-2">
                                         <ul className="ml-5 list-square list-outside divide-y-4 divide-transparent">
                                             <li>
-                                                수동 DNS 기능 전체 호환을 위한 DB 및 구조 설계 및
-                                                개발
+                                                수동 DNS 기능 전체 호환을 위한{' '}
+                                                <span className="hl">DB, 구조 설계 및 개발</span>
                                             </li>
                                             <li>
                                                 서비스 전반에 분산되어 있던 함수 기반의 기능을
-                                                클래스 기반으로 작성
+                                                <span className="hl">클래스 기반</span>으로 작성
                                             </li>
                                             <li>사용자, 관리자 화면 작성</li>
                                             <li>
@@ -198,16 +207,17 @@ const ResumePage = () => {
                                 <ul className="mt-4 ml-5 list-square list-outside divide-y-4 divide-transparent">
                                     <li>서버 세팅부터 개발, 관리 등 전반적인 운영</li>
                                     <li>
-                                        최소한의 서버 구성과 Docker 컨테이너 사용을 최대화한 인프라
-                                        구성
+                                        최소한의 서버 구성과 <span className="hl">Docker</span>{' '}
+                                        컨테이너 사용을 최대화한 인프라 구성
                                     </li>
                                     <li className="ml-5">
                                         Nginx, Java/Spring, Node.js, php-fpm, MySQL, MongoDB, Redis,
-                                        Jenkins, Certbot, Mail Server/Client 등의 컨테이너 구축 및
-                                        운영 경험
+                                        Jenkins, Certbot, Mail Server/Client 등의{' '}
+                                        <span className="hl">컨테이너 구축 및 운영</span> 경험
                                     </li>
                                     <li className="ml-5">
-                                        Docker Compose를 사용한 다중 컨테이너 관리
+                                        <span className="hl">Docker Compose</span>를 사용한 다중
+                                        컨테이너 관리
                                     </li>
                                     <li>
                                         서버, WAS, 서비스 각각의 로그 관리와 자동 알람 처리를 통한
@@ -219,13 +229,17 @@ const ResumePage = () => {
                                     </li>
                                     <li className="ml-5">방화벽 관리, Nmap을 이용한 보안 강화</li>
                                     <li className="ml-5">
-                                        Jenkins와 Webhook 이용한 서버 OTP 로그인 인증 환경 구성
+                                        <span className="hl">Jenkins</span>와 Webhook 이용한 서버
+                                        OTP 로그인 인증 환경 구성
                                     </li>
                                     <li>
                                         Jenkins, ShellScript를 사용한 Let's Encrypt 와일드카드
                                         도메인 인증서 자동 갱신 환경 구축
                                     </li>
-                                    <li>Github Action, Jenkins를 통한 CI/CD 구성</li>
+                                    <li>
+                                        Github Action, Jenkins를 통한{' '}
+                                        <span className="hl">CI/CD</span> 구성
+                                    </li>
                                     <li>자체 DNS / 네임서버 구성 및 운영</li>
                                 </ul>
                             </div>
@@ -288,8 +302,8 @@ const ResumePage = () => {
                                         관리자 페이지 구현
                                     </li>
                                     <li>
-                                        SEO 최적화 및 구글 검색엔진 등록, 2023년 2월 기준 MAU
-                                        1,855명
+                                        SEO 최적화 및 구글 검색엔진 등록, 2023년 2월 기준{' '}
+                                        <span className="hl">MAU 1,855명</span>
                                     </li>
                                     <li>기술 스택</li>
                                     <li className="ml-5">BackEnd</li>
@@ -317,7 +331,10 @@ const ResumePage = () => {
                                     </a>
                                 </p>
                                 <ul className="mt-4 ml-5 list-square list-outside divide-y-4 divide-transparent">
-                                    <li>GraphQL 기반의 회사소개 사이드 프로젝트</li>
+                                    <li>
+                                        <span className="hl">GraphQL</span> 기반의 회사소개 사이드
+                                        프로젝트
+                                    </li>
                                     <li>
                                         Schema 추가 코드가 필요없는 자동 추가 환경을 구축하여 작업
                                     </li>
@@ -350,7 +367,9 @@ const ResumePage = () => {
                                         웹 소켓을 통한 CLI 접속 환경 및 실시간 채팅, 알림, 초대 기능
                                         구현
                                     </li>
-                                    <li>테스트를 통한 코드 안정성 향상</li>
+                                    <li>
+                                        <span className="hl">테스트 코드</span> 작성으로 안정성 향상
+                                    </li>
                                     <li>백엔드 / 개발 전담</li>
                                     <li>기술 스택</li>
                                     <li className="ml-5">BackEnd</li>
