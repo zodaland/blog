@@ -17,9 +17,9 @@
 
 # URL
 ### Development
-API : https://blogapi.test.zodaland.com
+API : ~~https://blogapi.test.zodaland.com~~
 
-WEB : https://blog.test.zodaland.com
+WEB : ~~https://blog.test.zodaland.com~~
 ### Production
 API : https://blogpai.zodaland.com
 
