@@ -74,12 +74,12 @@ const ResumePage = () => {
                     <div className="mt-8 pl-2">
                         <ul className="ml-7 list-square list-outside divide-y-8 divide-transparent">
                             <li className="mt-5 ml-5 mr-2 md:text-2xl text-xl">
-                                3년차 개발자로서 <span className="hl">도메인 네임 시스템</span> 핵심 멤버로 개발,
-                                배포 및 운영했습니다.
+                                3년차 개발자로서 <span className="hl">도메인 네임 시스템</span> 핵심
+                                멤버로 개발, 배포 및 운영했습니다.
                             </li>
                             <li className="mt-5 ml-5 mr-2 md:text-2xl text-xl">
-                                서버 관리부터 다양한 프로젝트를 경험하여 전체적인 프로젝트
-                                생명주기 및 비즈니스 모델 성장에 대한 이해력을 길렀습니다.
+                                서버 관리부터 다양한 프로젝트를 경험하여 전체적인 프로젝트 생명주기
+                                및 비즈니스 모델 성장에 대한 이해력을 길렀습니다.
                             </li>
                             <li className="mt-5 ml-5 mr-2 md:text-2xl text-xl">
                                 최근에는 <span className="hl">코어 통신 시스템 개편 프로젝트</span>
@@ -87,9 +87,9 @@ const ResumePage = () => {
                                 <span className="hl">93%</span> 개선하였습니다.
                             </li>
                             <li className="mt-5 ml-5 mr-2 md:text-2xl text-xl">
-                                3년간 3곳의 팀 경험을 통해 어떠한 환경에서든 빠르게 적응하며 능동적으로 업무를 수행할 수
-                                있습니다. 또한, 좋은 동료가 되기 위해 소통에 관심을 가지고
-                                노력합니다.
+                                3년간 3곳의 팀 경험을 통해 어떠한 환경에서든 빠르게 적응하며
+                                능동적으로 업무를 수행할 수 있습니다. 또한, 좋은 동료가 되기 위해
+                                소통에 관심을 가지고 노력합니다.
                             </li>
                         </ul>
                     </div>
@@ -106,21 +106,22 @@ const ResumePage = () => {
                             <div className="md:w-3/4 w-full">
                                 <p className="h-9 pt-4 font-thin">연 매출 3400억의 중견 IT기업</p>
                                 <div className="mt-8">
-                                    <p className="text-2xl font-bold">
-                                        뉴 메이크샵
-                                    </p>
+                                    <p className="text-2xl font-bold">뉴 메이크샵</p>
                                     <p className="mt-2">2023.05 - 2023.08</p>
                                     <div className="mt-2">
                                         <ul className="mt-4 ml-5 list-square list-outside divide-y-4 divide-transparent">
                                             <li>
-                                                팀 내 기술 스택 결정을 위한 의사 결정(내재적, 인더스트리, 개발조직적, 프로젝트적 측면) 분석 및 프로젝트 초기 세팅
+                                                팀 내 기술 스택 결정을 위한 의사 결정(내재적,
+                                                인더스트리, 개발조직적, 프로젝트적 측면) 분석 및
+                                                프로젝트 초기 세팅
                                             </li>
                                             <li>공통 응답 DTO와 Exception 정의 및 개발</li>
                                             <li>
                                                 <a href="/tech/78" target="_blank">
                                                     <span className="hl">
                                                         <u>
-                                                            Entity 기반의 sort 유효성 검증기 작성/도입 및 가이드 라인 작성
+                                                            Entity 기반의 sort 유효성 검증기
+                                                            작성/도입 및 가이드 라인 작성
                                                         </u>
                                                     </span>
                                                 </a>
@@ -129,7 +130,8 @@ const ResumePage = () => {
                                                 <a href="/tech/79" target="_blank">
                                                     <span className="hl">
                                                         <u>
-                                                            i18n 및 공통 메시지 처리 범위 설정을 위한 소스 분석 및 프로젝트 내 도입
+                                                            i18n 및 공통 메시지 처리 범위 설정을
+                                                            위한 소스 분석 및 프로젝트 내 도입
                                                         </u>
                                                     </span>
                                                 </a>
@@ -145,9 +147,9 @@ const ResumePage = () => {
                                     <div className="mt-2">
                                         <ul className="mt-4 ml-5 list-square list-outside divide-y-4 divide-transparent">
                                             <li>
-                                                <span className="hl">JAVA</span> 기반의 백엔드 도메인 통신
-                                                시스템과 <span className="hl">PHP</span>기반의 웹 서비스
-                                                개발 전담
+                                                <span className="hl">JAVA</span> 기반의 백엔드
+                                                도메인 통신 시스템과 <span className="hl">PHP</span>
+                                                기반의 웹 서비스 개발 전담
                                             </li>
                                             <li>Index와 쿼리 튜닝을 통한 slow query 개선 경험</li>
                                             <li className="ml-5">
@@ -169,15 +171,28 @@ const ResumePage = () => {
                                                 <span className="hl">재설계 및 개발 전담</span>
                                             </li>
                                             <li>
-                                                <a href="https://datatracker.ietf.org/doc/html/rfc5730" target="_blank"><span className="hl"><u>RFC 5730 (EPP) 프로토콜</u></span></a>과 11개의 각기 다른 서버 통신을 위한 
-                                                인터페이스 구현, <span className="hl">코드 베이스</span> / <span className="hl">보일러 플레이트
-                                                코드 개선</span>
+                                                <a
+                                                    href="https://datatracker.ietf.org/doc/html/rfc5730"
+                                                    target="_blank"
+                                                >
+                                                    <span className="hl">
+                                                        <u>RFC 5730 (EPP) 프로토콜</u>
+                                                    </span>
+                                                </a>
+                                                과 11개의 각기 다른 서버 통신을 위한 인터페이스
+                                                구현, <span className="hl">코드 베이스</span> /{' '}
+                                                <span className="hl">
+                                                    보일러 플레이트 코드 개선
+                                                </span>
                                             </li>
                                             <li>
-                                                프로토콜에 따른 내부 TCP 통신, 데이터 공통 처리를 위한 외부 RESTful API 구현
+                                                프로토콜에 따른 내부 TCP 통신, 데이터 공통 처리를
+                                                위한 외부 RESTful API 구현
                                             </li>
                                             <li>
-                                                <span className="hl">세션 풀 구현</span>, <span className="hl">동시성 문제 해결</span>로 병렬 처리 구현
+                                                <span className="hl">세션 풀 구현</span>,{' '}
+                                                <span className="hl">동시성 문제 해결</span>로 병렬
+                                                처리 구현
                                             </li>
                                             <li>
                                                 평균 응답속도 <span className="hl">43.31%</span>,
@@ -205,7 +220,10 @@ const ResumePage = () => {
                                                 서비스 전반에 분산되어 있던 레거시 코드를
                                                 <span className="hl">객체지향적 코드</span>로 개선
                                             </li>
-                                            <li>기능 전체의 <span className="hl">BE</span> / <span className="hl">FE</span> 역할 수행</li>
+                                            <li>
+                                                기능 전체의 <span className="hl">BE</span> /{' '}
+                                                <span className="hl">FE</span> 역할 수행
+                                            </li>
                                             <li>
                                                 시스템 통합 및 자동화로 운영팀 및 개발팀 업무 효율성
                                                 상승
@@ -231,8 +249,7 @@ const ResumePage = () => {
                                 <ul className="mt-4 ml-5 list-square list-outside divide-y-4 divide-transparent">
                                     <li>서버 세팅부터 개발, 관리 등 전반적인 운영</li>
                                     <li>
-                                        <span className="hl">Docker</span>{' '}
-                                        기반의 인프라 구성
+                                        <span className="hl">Docker</span> 기반의 인프라 구성
                                     </li>
                                     <li className="ml-5">
                                         Nginx, Java/Spring, Node.js, php-fpm, MySQL, MongoDB, Redis,
@@ -249,10 +266,12 @@ const ResumePage = () => {
                                     </li>
                                     <li className="ml-5">방화벽, Nmap을 이용한 보안 강화</li>
                                     <li className="ml-5">
-                                        Jenkins를 이용한 <span className="hl">2차 인증 구현</span> (OTP)
+                                        Jenkins를 이용한 <span className="hl">2차 인증 구현</span>{' '}
+                                        (OTP)
                                     </li>
-                                    <li>자체 DNS / 네임서버 구축 및 와일드카드
-                                        도메인 인증서 자동 갱신 구현
+                                    <li>
+                                        자체 DNS / 네임서버 구축 및 와일드카드 도메인 인증서 자동
+                                        갱신 구현
                                     </li>
                                     <li>
                                         Github Action, Jenkins를 이용한
@@ -270,14 +289,22 @@ const ResumePage = () => {
                             <div className="md:w-3/4 w-full">
                                 <p className="h-9 pt-4 font-thin"></p>
                                 <ul className="mt-4 ml-5 list-square list-outside divide-y-4 divide-transparent">
-                                    <li><a href="https://naver.me/xXDM8Fy6" target="_blank"><span className="hl"><u>비즈니스 모델에 대한 관심을 바탕으로 웹 애플리케이션 개발</u></span></a></li>
+                                    <li>
+                                        <a href="https://naver.me/xXDM8Fy6" target="_blank">
+                                            <span className="hl">
+                                                <u>
+                                                    비즈니스 모델에 대한 관심을 바탕으로 웹
+                                                    애플리케이션 개발
+                                                </u>
+                                            </span>
+                                        </a>
+                                    </li>
                                     <li>백엔드 / 프론트엔드 개발 전담</li>
                                     <li>
-                                        개별 인증을 통한 일회성 접근 URL과 한시적 이미지를 이용한 웹 잡지 상품 구현
+                                        개별 인증을 통한 일회성 접근 URL과 한시적 이미지를 이용한 웹
+                                        잡지 상품 구현
                                     </li>
-                                    <li>
-                                        주기적 일정 정보에 따른 자동 상품 갱신 시스템 구축
-                                    </li>
+                                    <li>주기적 일정 정보에 따른 자동 상품 갱신 시스템 구축</li>
                                     <li>기술 스택</li>
                                     <li className="ml-5">BackEnd</li>
                                     <li className="ml-10">
@@ -312,9 +339,7 @@ const ResumePage = () => {
                                     <li>
                                         카테고리, 태그의 추가 / 수정이 용이한 블로그 페이지 구현
                                     </li>
-                                    <li>
-                                        개인 메일서버 연동, 2차 보안 관리자 페이지 구현
-                                    </li>
+                                    <li>개인 메일서버 연동, 2차 보안 관리자 페이지 구현</li>
                                     <li>
                                         SEO 최적화 및 구글 검색엔진 등록, 2023년 8월 기준{' '}
                                         <span className="hl">MAU 1,530명</span>
