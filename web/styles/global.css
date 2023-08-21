@@ -21,7 +21,7 @@
 		max-width: calc((100% - 768px) / 2);
 	}
     .resume {
-        	letter-spacing: -0.05em;
+      letter-spacing: -0.05em;
     }
 	.w-pic {
 		width: 1024px;
@@ -37,7 +37,7 @@
       font-weight: 700;
     }
     @media all and (max-width: 767px) {
-        .main {
+      .main {
             min-width: 100%;
 			max-width: 100%;
         }
@@ -51,11 +51,11 @@
 			background: rgba(240,249,255,0.85);
 		}
 		.menu::after {
-			 border-top: 0px solid transparent; 
-			 border-left: 10px solid transparent; 
-			 border-right: 10px solid transparent; 
-			 border-bottom: 10px solid rgba(240,249,255,0.85); 
-			 content: ""; 
+			 border-top: 0px solid transparent;
+			 border-left: 10px solid transparent;
+			 border-right: 10px solid transparent;
+			 border-bottom: 10px solid rgba(240,249,255,0.85);
+			 content: "";
 			 position: absolute;
 			 top: -10px;
 			 right: 10px;

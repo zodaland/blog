@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FileText, AtSign } from 'react-feather';
+import { AtSign } from 'react-feather';
 
 import Contents from './Contents';
 import Markdown from './Markdown';
