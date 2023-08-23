@@ -78,10 +78,6 @@ const ResumePage = () => {
                                 멤버로 개발, 배포 및 운영했습니다.
                             </li>
                             <li className="mt-5 ml-5 mr-2 md:text-2xl text-xl">
-                                서버 관리부터 다양한 프로젝트를 경험하여 전체적인 프로젝트 생명주기
-                                및 비즈니스 모델 성장에 대한 이해력을 길렀습니다.
-                            </li>
-                            <li className="mt-5 ml-5 mr-2 md:text-2xl text-xl">
                                 최근에는 <span className="hl">코어 통신 시스템 개편 프로젝트</span>
                                 의 설계/개발/배포를 전담하였고 평균 처리 속도를 약{' '}
                                 <span className="hl">93%</span> 개선하였습니다.
@@ -99,12 +95,12 @@ const ResumePage = () => {
                     <div className="divide-y md:ml-0 ml-3">
                         <div className="flex md:flex-row flex-col">
                             <div className="md:w-1/4 w-full">
-                                <p className="text-3xl font-bold">(주) 커넥트웨이브</p>
+                                <p className="text-3xl font-bold">커넥트웨이브</p>
                                 <p className="mt-4">2020.04 - 2023.08</p>
                                 <p className="leading-3 font-thin">Web Developer</p>
                             </div>
                             <div className="md:w-3/4 w-full">
-                                <p className="h-9 pt-4 font-thin">연 매출 3400억의 중견 IT기업</p>
+                                <p className="h-9 pt-4 font-thin">연 매출 4500억의 중견 IT기업</p>
                                 <div className="mt-8">
                                     <p className="text-2xl font-bold">뉴 메이크샵</p>
                                     <p className="mt-2">2023.05 - 2023.08</p>
@@ -136,25 +132,10 @@ const ResumePage = () => {
                                                     </span>
                                                 </a>
                                             </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div className="mt-8">
-                                    <p className="text-2xl font-bold">
-                                        도메인 네임 시스템(DNS) 업무
-                                    </p>
-                                    <p className="mt-2">2020.04 - 2023.08</p>
-                                    <div className="mt-2">
-                                        <ul className="mt-4 ml-5 list-square list-outside divide-y-4 divide-transparent">
-                                            <li>
-                                                <span className="hl">JAVA</span> 기반의 백엔드
-                                                도메인 통신 시스템과 <span className="hl">PHP</span>
-                                                기반의 웹 서비스 개발 전담
-                                            </li>
-                                            <li>Index와 쿼리 튜닝을 통한 slow query 개선 경험</li>
+                                            <li>기술 스택</li>
                                             <li className="ml-5">
-                                                평균 로딩 속도 <span className="hl">1.51초</span> →{' '}
-                                                <span className="hl">0.35초</span>
+                                                Java, Spring Boot, flyway, MariaDB, JPA, QueryDSL,
+                                                Gradle
                                             </li>
                                         </ul>
                                     </div>
@@ -186,11 +167,15 @@ const ResumePage = () => {
                                                 </span>
                                             </li>
                                             <li>
-                                                프로토콜에 따른 내부 TCP 통신, 데이터 공통 처리를
-                                                위한 외부 RESTful API 구현
+                                                프로토콜에 따른 내부 TCP 통신을 도출한 소켓
+                                                인터페이스 구현
                                             </li>
                                             <li>
-                                                <span className="hl">세션 풀 구현</span>,{' '}
+                                                소켓 데이터 통신 후 응답 처리를 위한 RESTful API
+                                                구현
+                                            </li>
+                                            <li>
+                                                <span className="hl">소켓 세션 풀 구현</span>,{' '}
                                                 <span className="hl">동시성 문제 해결</span>로 병렬
                                                 처리 구현
                                             </li>
@@ -228,6 +213,33 @@ const ResumePage = () => {
                                                 시스템 통합 및 자동화로 운영팀 및 개발팀 업무 효율성
                                                 상승
                                             </li>
+                                            <li>기술 스택</li>
+                                            <li className="ml-5">
+                                                PHP, MySQL, JavaScript, HTML, BIND9, qmail, vpopmail
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div className="mt-8">
+                                    <p className="text-2xl font-bold">
+                                        도메인 네임 시스템(DNS) 업무
+                                    </p>
+                                    <p className="mt-2">2020.04 - 2023.08</p>
+                                    <div className="mt-2">
+                                        <ul className="mt-4 ml-5 list-square list-outside divide-y-4 divide-transparent">
+                                            <li>
+                                                <span className="hl">JAVA</span> 기반의 백엔드
+                                                도메인 통신 시스템과 <span className="hl">PHP</span>
+                                                기반의 웹 서비스 개발 전담
+                                            </li>
+                                            <li>
+                                                정산 데이터 Index와 쿼리 튜닝을 통한 slow query 개선
+                                                경험
+                                            </li>
+                                            <li className="ml-5">
+                                                평균 로딩 속도 <span className="hl">1.51초</span> →{' '}
+                                                <span className="hl">0.35초</span>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -244,8 +256,8 @@ const ResumePage = () => {
                                 <p className="mt-4">2020.08 - 2023.</p>
                                 <p className="leading-3 font-thin">root</p>
                             </div>
-                            <div className="md:w-3/4 w-full">
-                                <p className="h-9 pt-4 font-thin"></p>
+                            <div className="md:w-3/4 w-full divide-y-2 divide-transparent pt-2">
+                                <p className="font-thin"></p>
                                 <ul className="mt-4 ml-5 list-square list-outside divide-y-4 divide-transparent">
                                     <li>서버 세팅부터 개발, 관리 등 전반적인 운영</li>
                                     <li>
@@ -282,23 +294,51 @@ const ResumePage = () => {
                         </div>
                         <div className="flex md:flex-row flex-col mb-4 pt-8">
                             <div className="md:w-1/4 w-full">
-                                <p className="text-3xl font-bold">웹 잡지</p>
-                                <p className="mt-4">2022.08 - 2023.</p>
+                                <p className="text-3xl font-bold">Web Automation</p>
+                                <p className="mt-4">2023.06 - 2023.08</p>
                                 <p className="leading-3 font-thin">Main Developer</p>
                             </div>
-                            <div className="md:w-3/4 w-full">
-                                <p className="h-9 pt-4 font-thin"></p>
+                            <div className="md:w-3/4 w-full divide-y-2 divide-transparent pt-2">
                                 <ul className="mt-4 ml-5 list-square list-outside divide-y-4 divide-transparent">
+                                    <li>경매 플랫폼 자동화 외주</li>
                                     <li>
-                                        <a href="https://naver.me/xXDM8Fy6" target="_blank">
-                                            <span className="hl">
-                                                <u>
-                                                    비즈니스 모델에 대한 관심을 바탕으로 웹
-                                                    애플리케이션 개발
-                                                </u>
-                                            </span>
-                                        </a>
+                                        플랫폼 다양화 문제 해결을 위한{' '}
+                                        <span className="hl">추상화 계층</span> 도입
                                     </li>
+                                    <li>
+                                        입찰 지연 최소화를 위한 검증 작업{' '}
+                                        <span className="hl">경량화</span>
+                                    </li>
+                                    <li>
+                                        입찰 가능성 증대를 위한{' '}
+                                        <span className="hl">동기화된 병렬 처리</span> 및 다양한
+                                        입찰 전략 도입
+                                    </li>
+                                    <li>
+                                        화면 실시간 동기화 처리 및 서버 푸시를 위해 WebSocket API
+                                        구현
+                                    </li>
+                                    <li>기술 스택</li>
+                                    <li className="ml-5">
+                                        Java, Spring Boot, Selenium, WebSocket, JPA, H2, Thymeleaf
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="flex md:flex-row flex-col mb-4 pt-8">
+                            <div className="md:w-1/4 w-full">
+                                <p className="text-3xl font-bold">마륜정</p>
+                                <p className="mt-4">2022.08 - 2023.06</p>
+                                <p className="leading-3 font-thin">Main Developer</p>
+                            </div>
+                            <div className="md:w-3/4 w-full divide-y-2 divide-transparent pt-2">
+                                <p className="font-thin">
+                                    <a href="https://xn--ew2bthw29a.com" target="_blank">
+                                        https://www.xn--ew2bthw29a.com
+                                    </a>
+                                </p>
+                                <ul className="mt-4 ml-5 list-square list-outside divide-y-4 divide-transparent">
+                                    <li>웹툰 형식의 온라인 잡지 상품을 판매하는 사이트 외주</li>
                                     <li>백엔드 / 프론트엔드 개발 전담</li>
                                     <li>
                                         개별 인증을 통한 일회성 접근 URL과 한시적 이미지를 이용한 웹
@@ -324,8 +364,13 @@ const ResumePage = () => {
                                 <p className="mt-4">2022.01 - 2022.03</p>
                                 <p className="leading-3 font-thin">Main Developer, Author</p>
                             </div>
-                            <div className="md:w-3/4 w-full">
-                                <p className="h-9 pt-4 font-thin">
+                            <div className="md:w-3/4 w-full divide-y-2 divide-transparent pt-2">
+                                <p className="font-thin">
+                                    <a href="https://zoda.land" target="_blank">
+                                        https://zoda.land
+                                    </a>
+                                </p>
+                                <p className="font-thin">
                                     <a href="https://github.com/zodaland/blog" target="_blank">
                                         https://github.com/zodaland/blog
                                     </a>
@@ -359,20 +404,25 @@ const ResumePage = () => {
                         </div>
                         <div className="flex md:flex-row flex-col mb-8 pt-8">
                             <div className="md:w-1/4 w-full">
-                                <p className="text-3xl font-bold">회사소개</p>
+                                <p className="text-3xl font-bold">4senc</p>
                                 <p className="mt-4">2021.11 - 2022.01</p>
                                 <p className="leading-3 font-thin">Main Developer</p>
                             </div>
-                            <div className="md:w-3/4 w-full">
-                                <p className="h-9 pt-4 font-thin">
+                            <div className="md:w-3/4 w-full divide-y-2 divide-transparent pt-2">
+                                <p className="font-thin">
+                                    <a href="https://4senc.com" target="_blank">
+                                        https://4senc.com
+                                    </a>
+                                </p>
+                                <p className="font-thin">
                                     <a href="https://github.com/zodaland/4senc" target="_blank">
                                         https://github.com/zodaland/4senc
                                     </a>
                                 </p>
                                 <ul className="mt-4 ml-5 list-square list-outside divide-y-4 divide-transparent">
                                     <li>
-                                        <span className="hl">GraphQL</span> 기반의 회사소개 사이드
-                                        프로젝트
+                                        <span className="hl">GraphQL</span> 기반의 회사소개 사이트
+                                        외주
                                     </li>
                                     <li>
                                         Schema 추가 코드가 필요없는 자동 추가 환경을 구축하여 작업
@@ -394,8 +444,13 @@ const ResumePage = () => {
                                 <p className="mt-4">2021.02 - 2021.04</p>
                                 <p className="leading-3 font-thin">Main Developer</p>
                             </div>
-                            <div className="md:w-3/4 w-full">
-                                <p className="h-9 pt-4 font-thin">
+                            <div className="md:w-3/4 w-full divide-y-2 divide-transparent pt-2">
+                                <p className="font-thin">
+                                    <a href="https://mt.zodaland.com" target="_blank">
+                                        https://mt.zodaland.com
+                                    </a>
+                                </p>
+                                <p className="font-thin">
                                     <a href="https://github.com/zodaland/molltalk" target="_blank">
                                         https://github.com/zodaland/molltalk
                                     </a>
@@ -483,6 +538,16 @@ const ResumePage = () => {
                     <div className="divide-y md:mx-0 mx-3 mb-20">
                         <div className="flex md:flex-row flex-col mb-8 pt-8">
                             <div className="md:w-1/4 w-full">
+                                <p className="text-3xl font-bold">학점은행</p>
+                                <p className="mt-4">2021.01 - 2022.12</p>
+                                <p className="leading-3 font-thin">Graduation</p>
+                            </div>
+                            <div className="md:w-3/4 w-full">
+                                <p className="h-9 pt-4 font-thin">컴퓨터공학</p>
+                            </div>
+                        </div>
+                        <div className="flex md:flex-row flex-col mb-8 pt-8">
+                            <div className="md:w-1/4 w-full">
                                 <p className="text-3xl font-bold">인덕대학교</p>
                                 <p className="mt-4">2013.03 - 2020.02</p>
                                 <p className="leading-3 font-thin">Graduation</p>
@@ -499,16 +564,6 @@ const ResumePage = () => {
                                         현장 일을 병행하다보니 졸업이 다소 늦어졌습니다.
                                     </li>
                                 </ul>
-                            </div>
-                        </div>
-                        <div className="flex md:flex-row flex-col mb-8 pt-8">
-                            <div className="md:w-1/4 w-full">
-                                <p className="text-3xl font-bold">학점은행</p>
-                                <p className="mt-4">2021.01 - 2022.12</p>
-                                <p className="leading-3 font-thin">Graduation</p>
-                            </div>
-                            <div className="md:w-3/4 w-full">
-                                <p className="h-9 pt-4 font-thin">컴퓨터공학</p>
                             </div>
                         </div>
                     </div>
