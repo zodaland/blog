@@ -18,7 +18,7 @@ export class CommentDto {
     name: string;
 
     @IsNotEmpty()
-    @Matches(/^[-0-9a-zA-Z가-힣ㄱ-ㅎㅏ-ㅣ!.,();~?\/ \n]+$/)
+    @Matches(/^[-0-9a-zA-Z가-힣ㄱ-ㅎㅏ-ㅣ!.,:();~?\/ \n]+$/)
     comment: string;
 
     @Length(0, 30)
