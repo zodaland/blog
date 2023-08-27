@@ -1,6 +1,7 @@
 import Head from 'next/head';
 
 import Img from '../components/Img';
+import { Link } from 'react-feather';
 
 const ResumePage = () => {
     const title = 'Resume | ' + process.env.NEXT_PUBLIC_TITLE;
@@ -68,29 +69,29 @@ const ResumePage = () => {
                             </div>
                         </div>
                     </div>
-                    <h1 className="text-5xl font-bold mt-10 mb-14 md:ml-0 ml-1">
-                        Introduce<span className="text-sky-300">,</span>
+                    <h1 className="text-5xl font-bold mt-10 mb-14 md:ml-0 ml-2">
+                        Introduce<span className="text-sky-300">_</span>
                     </h1>
-                    <div className="mt-8 pl-2">
-                        <ul className="ml-7 list-square list-outside divide-y-8 divide-transparent">
-                            <li className="mt-5 ml-5 mr-2 md:text-2xl text-xl">
-                                3년차 개발자로서 <span className="hl">도메인 네임 시스템</span> 핵심
+                    <div className="mt-8 ml-3">
+                        <ul className="ml-5 md:ml-7 list-square list-outside divide-y-8 divide-transparent">
+                            <li className="mt-5 mr-2 md:text-2xl text-xl">
+                                4년차 개발자로서 <span className="hl">도메인 네임 시스템</span> 핵심
                                 멤버로 개발, 배포 및 운영했습니다.
                             </li>
-                            <li className="mt-5 ml-5 mr-2 md:text-2xl text-xl">
+                            <li className="mt-5 mr-2 md:text-2xl text-xl">
                                 최근에는 <span className="hl">코어 통신 시스템 개편 프로젝트</span>
                                 의 설계/개발/배포를 전담하였고 평균 처리 속도를 약{' '}
                                 <span className="hl">93%</span> 개선하였습니다.
                             </li>
-                            <li className="mt-5 ml-5 mr-2 md:text-2xl text-xl">
+                            <li className="mt-5 mr-2 md:text-2xl text-xl">
                                 3년간 3곳의 팀 경험을 통해 어떠한 환경에서든 빠르게 적응하며
                                 능동적으로 업무를 수행할 수 있습니다. 또한, 좋은 동료가 되기 위해
                                 소통에 관심을 가지고 노력합니다.
                             </li>
                         </ul>
                     </div>
-                    <h1 className="text-5xl font-bold mt-28 mb-14 md:ml-0 ml-1">
-                        Experience<span className="text-sky-300">,</span>
+                    <h1 className="text-5xl font-bold mt-28 mb-14 md:ml-0 ml-2">
+                        Experience<span className="text-sky-300">_</span>
                     </h1>
                     <div className="divide-y md:ml-0 ml-3">
                         <div className="flex md:flex-row flex-col">
@@ -102,10 +103,11 @@ const ResumePage = () => {
                             <div className="md:w-3/4 w-full">
                                 <p className="h-9 pt-4 font-thin">연 매출 4500억의 중견 IT기업</p>
                                 <div className="mt-8">
-                                    <p className="text-2xl font-bold">뉴 메이크샵</p>
+                                    <p className="text-2xl font-bold">뉴 메이크샵 - 디자인 센터</p>
                                     <p className="mt-2">2023.05 - 2023.08</p>
                                     <div className="mt-2">
                                         <ul className="mt-4 ml-5 list-square list-outside divide-y-4 divide-transparent">
+                                            <li>메이크샵 노코드 디자인 에디터 신규 개발</li>
                                             <li>
                                                 팀 내 기술 스택 결정을 위한 의사 결정(내재적,
                                                 인더스트리, 개발조직적, 프로젝트적 측면) 분석 및
@@ -246,8 +248,8 @@ const ResumePage = () => {
                             </div>
                         </div>
                     </div>
-                    <h1 className="text-5xl font-bold mt-28 mb-14 md:ml-0 ml-1">
-                        Side Projects<span className="text-sky-300">,</span>
+                    <h1 className="text-5xl font-bold mt-28 mb-14 md:ml-0 ml-2">
+                        Side Project<span className="text-sky-300">_</span>
                     </h1>
                     <div className="divide-y md:mx-0 mx-3">
                         <div className="flex md:flex-row flex-col mb-8">
@@ -333,8 +335,13 @@ const ResumePage = () => {
                             </div>
                             <div className="md:w-3/4 w-full divide-y-2 divide-transparent pt-2">
                                 <p className="font-thin">
-                                    <a href="https://xn--ew2bthw29a.com" target="_blank">
-                                        https://www.xn--ew2bthw29a.com
+                                    <a
+                                        href="https://xn--ew2bthw29a.com"
+                                        target="_blank"
+                                        className="flex items-center"
+                                    >
+                                        <Link className="h-3 w-4" />
+                                        <u>https://www.xn--ew2bthw29a.com</u>
                                     </a>
                                 </p>
                                 <ul className="mt-4 ml-5 list-square list-outside divide-y-4 divide-transparent">
@@ -366,13 +373,23 @@ const ResumePage = () => {
                             </div>
                             <div className="md:w-3/4 w-full divide-y-2 divide-transparent pt-2">
                                 <p className="font-thin">
-                                    <a href="https://zoda.land" target="_blank">
-                                        https://zoda.land
+                                    <a
+                                        href="https://zoda.land"
+                                        target="_blank"
+                                        className="flex items-center"
+                                    >
+                                        <Link className="h-3 w-4" />
+                                        <u>https://zoda.land</u>
                                     </a>
                                 </p>
                                 <p className="font-thin">
-                                    <a href="https://github.com/zodaland/blog" target="_blank">
-                                        https://github.com/zodaland/blog
+                                    <a
+                                        href="https://github.com/zodaland/blog"
+                                        target="_blank"
+                                        className="flex items-center"
+                                    >
+                                        <Link className="h-3 w-4" />
+                                        <u>https://github.com/zodaland/blog</u>
                                     </a>
                                 </p>
                                 <ul className="mt-4 ml-5 list-square list-outside divide-y-4 divide-transparent">
@@ -410,13 +427,23 @@ const ResumePage = () => {
                             </div>
                             <div className="md:w-3/4 w-full divide-y-2 divide-transparent pt-2">
                                 <p className="font-thin">
-                                    <a href="https://4senc.com" target="_blank">
-                                        https://4senc.com
+                                    <a
+                                        href="https://4senc.com"
+                                        target="_blank"
+                                        className="flex items-center"
+                                    >
+                                        <Link className="h-3 w-4" />
+                                        <u>https://4senc.com</u>
                                     </a>
                                 </p>
                                 <p className="font-thin">
-                                    <a href="https://github.com/zodaland/4senc" target="_blank">
-                                        https://github.com/zodaland/4senc
+                                    <a
+                                        href="https://github.com/zodaland/4senc"
+                                        target="_blank"
+                                        className="flex items-center"
+                                    >
+                                        <Link className="h-3 w-4" />
+                                        <u>https://github.com/zodaland/4senc</u>
                                     </a>
                                 </p>
                                 <ul className="mt-4 ml-5 list-square list-outside divide-y-4 divide-transparent">
@@ -446,13 +473,23 @@ const ResumePage = () => {
                             </div>
                             <div className="md:w-3/4 w-full divide-y-2 divide-transparent pt-2">
                                 <p className="font-thin">
-                                    <a href="https://mt.zodaland.com" target="_blank">
-                                        https://mt.zodaland.com
+                                    <a
+                                        href="https://mt.zodaland.com"
+                                        target="_blank"
+                                        className="flex items-center"
+                                    >
+                                        <Link className="h-3 w-4" />
+                                        <u>https://mt.zodaland.com</u>
                                     </a>
                                 </p>
                                 <p className="font-thin">
-                                    <a href="https://github.com/zodaland/molltalk" target="_blank">
-                                        https://github.com/zodaland/molltalk
+                                    <a
+                                        href="https://github.com/zodaland/molltalk"
+                                        target="_blank"
+                                        className="flex items-center"
+                                    >
+                                        <Link className="h-3 w-4" />
+                                        <u>https://github.com/zodaland/molltalk</u>
                                     </a>
                                 </p>
                                 <ul className="mt-4 ml-5 list-square list-outside divide-y-4 divide-transparent">
@@ -476,8 +513,8 @@ const ResumePage = () => {
                             </div>
                         </div>
                     </div>
-                    <h1 className="text-5xl font-bold mt-28 mb-14 md:ml-0 ml-1">
-                        Skill<span className="text-sky-300">,</span>
+                    <h1 className="text-5xl font-bold mt-28 mb-14 md:ml-0 ml-2">
+                        Skill<span className="text-sky-300">_</span>
                     </h1>
                     <ul className="mt-4 md:ml-6 ml-8 list-square list-outside divide-y-8 divide-transparent">
                         <li className="text-2xl font-bold">Language</li>
@@ -532,8 +569,8 @@ const ResumePage = () => {
                             </li>
                         </ul>
                     </ul>
-                    <h1 className="text-5xl font-bold mt-28 mb-14 md:ml-0 ml-1">
-                        Education<span className="text-sky-300">,</span>
+                    <h1 className="text-5xl font-bold mt-28 mb-14 md:ml-0 ml-2">
+                        Education<span className="text-sky-300">_</span>
                     </h1>
                     <div className="divide-y md:mx-0 mx-3 mb-20">
                         <div className="flex md:flex-row flex-col mb-8 pt-8">
@@ -554,16 +591,6 @@ const ResumePage = () => {
                             </div>
                             <div className="md:w-3/4 w-full">
                                 <p className="h-9 pt-4 font-thin">컴퓨터소프트웨어학과</p>
-                                <ul className="mt-4 ml-5 list-square list-outside divide-y-4 divide-transparent">
-                                    <li>
-                                        3년간 컴퓨터구조, OS, 서버, 네트워크, 자료구조, 웹
-                                        프로그래밍 등의 과목을 공부했습니다.
-                                    </li>
-                                    <li>
-                                        재학 중 2년 간의 여러가지 아르바이트, 1년 반 동안의 공사
-                                        현장 일을 병행하다보니 졸업이 다소 늦어졌습니다.
-                                    </li>
-                                </ul>
                             </div>
                         </div>
                     </div>
