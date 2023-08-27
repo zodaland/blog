@@ -151,7 +151,7 @@ const CommentEdit = ({ id, mutate }: CommentEditProps) => {
             alert('이름에 한글 / 영문 / 숫자만 10자 이내로 입력 해주세요.');
             return;
         }
-        const commentRegEx = /^[-0-9a-zA-Z가-힣ㄱ-ㅎㅏ-ㅣ!.,();~ \n]+$/;
+        const commentRegEx = /^[-0-9a-zA-Z가-힣ㄱ-ㅎㅏ-ㅣ!?\/.,();~ \n]+$/;
         if (input.comment.length === 0) {
             alert('댓글을 입력해주세요.');
             return;
@@ -241,7 +241,7 @@ const CommentEdit = ({ id, mutate }: CommentEditProps) => {
                     name="comment"
                     value={input.comment}
                     onChange={handleChange}
-                    placeholder="한글 / 영문 / 숫자와 일부 특수문자(~ - ! , . ( ) ;)만 입력 해주세요."
+                    placeholder="한글 / 영문 / 숫자와 일부 특수문자(~ - ! , . ( ) ; ? /)만 입력 해주세요."
                 />
             </div>
         </div>
