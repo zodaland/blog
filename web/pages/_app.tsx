@@ -7,6 +7,7 @@ import wrapper from '../redux';
 
 import { useAppDispatch } from '../redux/hooks';
 import { setPath } from '../redux/modules/uriSlice';
+import useScrollRestoration from '../lib/useScrollRestoration';
 
 const App = ({ Component, pageProps }: AppProps) => {
     const dispatch = useAppDispatch();
@@ -23,6 +24,9 @@ const App = ({ Component, pageProps }: AppProps) => {
             ? 'https://www.zodaland.com' + path
             : 'https://blog.test.zodaland.com' + path;
     const ogImage = `${process.env.NEXT_PUBLIC_IMAGE_URL}og_profile.jpg`;
+
+    // 뒤로가기 스크롤 고정 처리
+    useScrollRestoration(router);
 
     return (
         <>
